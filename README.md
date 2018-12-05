@@ -7,7 +7,7 @@ An ahk script designed to spawn pokemon in addition to make catching/interacting
 
 [0.2 Requirements](#02-requirements)
 
-[0.3 Support Server](#03-contact-me)
+[0.3 Contact me](#03-contact-me)
 
 [0.4 Disclaimer](#04-use-this-script-at-your-own-risk)
 
