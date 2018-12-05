@@ -7,7 +7,7 @@ An ahk script designed to spawn pokemon in addition to make catching/interacting
 
 [0.2 Requirements](#02-requirements)
 
-[0.3 Support Server](#03-support-server)
+[0.3 Support Server](#03-contact-me)
 
 [0.4 Disclaimer](#04-use-this-script-at-your-own-risk)
 
@@ -71,12 +71,14 @@ A working NumPad on your keyboard, the initial release is heavily reliant on the
 
 I've included a compiled .exe of the script itself but it will not run on 32-bit systems. If you do not want to use the compiled .exe version then you will need [AutoHotKey](https://www.autohotkey.com/) to use the .ahk file instead. AutoHotKey is free, and is not a large download. Both the .ahk and the .exe do the same exact thing in terms of functionality, it is merely a matter of convenience as to which one you would like to use.
 
-### 0.3 Support Server
-Should you have any questions, suggestions, or just want to test the script out I've set up a support/community server that I will be fairly active on and appropriately themed it after Pokemon villains (I will no doubt anger part of the PokeCord community by creating macro tools so I may as well embrace it).
+### 0.3 Contact me
+You can contact me on Discord directly by sending a friend request to "Giovanni#9627".
+
+Should you have any questions, suggestions, or just want to test the script out I've also set up a support/community server that I will be fairly active on and appropriately themed it after Pokemon villains (I will no doubt anger part of the PokeCord community by creating macro tools so I may as well embrace it).
 
 [Click here to join the Discord](https://discord.gg/VYeX97y)
 
-I should stress that you join using an alternate account, as I'm not sure what actions the PokeCord team will take should the server become highly trafficked.
+I should stress that you join using an alternate account though, as I'm not sure what actions the PokeCord team will take should the server become highly trafficked.
 
 ### 0.4 Use this script at your own risk.
 I’ve been using scripts on PokeCord for some time and while the risk is not at self bot levels & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
