@@ -62,6 +62,10 @@ An ahk script designed to spawn pokemon in addition to make catching/interacting
 * Macro's to sell or buy pokemon in bulk
 * More features planned for future releases including GUI support, more market macro's and further customization according to user preference
 
+![guipreview]
+
+###### **picture shown is not yet in the script, layout or features may change before graphical user interface is completed*
+
 ### 0.2 Requirements
 A working NumPad on your keyboard, the initial release is heavily reliant on the use of HotKeys, most of which I have bound to or around the NumPad.
 
@@ -70,7 +74,7 @@ I've included a compiled .exe of the script itself but it will not run on 32-bit
 ### 0.3 Support Server
 Should you have any questions, suggestions, or just want to test the script out I've set up a support/community server that I will be fairly active on and appropriately themed it after Pokemon villains (I will no doubt anger part of the PokeCord community by creating macro tools so I may as well embrace it).
 
-[Click here to join](https://discord.gg/VYeX97y)
+[Click here to join the Discord](https://discord.gg/VYeX97y)
 
 I should stress that you join using an alternate account, as I'm not sure what actions the PokeCord team will take should the server become highly trafficked.
 
@@ -217,7 +221,7 @@ Looks like I’ll be able to resell these for a little bit of profit.
 ![marketbuy2]
 
 ## 5.0 Message Spam
-I must stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this in a public server. The Team Rocket server I set up and mentioned in [Section 0.3](#03-support-server) is always open to people wanting to test this or any other commands out, I only ask that you stay in the spam channels when doing so. Again, do your testing and spamming privately.
+I must stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this in a public server. The Team Rocket server I set up and mentioned in [section 0.3](#03-support-server) is always open to people wanting to test this or any other commands out, I only ask that you stay in the spam channels when doing so. Again, do your testing and spamming privately.
 
 ### 5.1 Starting spam
 **Alt+[**
@@ -232,6 +236,7 @@ You will be presented with an input prompt asking you how many messages you woul
 Will pause or unpause the counting messages after they have begun. To cancel the spam completely you will need to reload, or exit the script.
 
 
+[guipreview]: https://i.imgur.com/Htxd7a4.png
 [prefixdefault]: https://i.imgur.com/zyJauc6.png
 [prefixexample1]: https://i.imgur.com/SRrPycu.png
 [prefixexample2]: https://i.imgur.com/9BuWVuQ.png
