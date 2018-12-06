@@ -245,7 +245,7 @@ Looks like I’ll be able to resell these for a little bit of profit.
 
 ## 5.0 Message Spam
 
-I must stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this in a public server. The Team Rocket server I set up and mentioned in [section 0.3](#03-support-server) is always open to people wanting to test this or any other commands out, I only ask that you stay in the spam channels when doing so. Again, do your testing and spamming privately.
+I must stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this in a publicly.
 
 ### 5.1 Starting spam
 
