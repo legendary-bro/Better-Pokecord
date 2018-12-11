@@ -52,6 +52,8 @@ This isn't a self bot and its not gonna auto catch stuff for you. You have other
 
 [4.4 Quickly buy](#44-quickly-buy)
 
+[4.5 Get multiple market infos](#45-get-multiple-market-infos)
+
 ### [**5.0 Message Spam**](#50-message-spam-1)
 
 [5.1 Starting spam](#51-starting-spam)
@@ -243,9 +245,17 @@ Looks like I’ll be able to resell these for a little bit of profit.
 
 ![marketbuy2]
 
+### 4.5 Get multiple market infos
+
+#### Ctrl+NumPadAdd
+
+Is used in the exact same way as the above two examples, but it will show you the detailed info for pokemon on the market.
+
 ## 5.0 Message Spam
 
-I must stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this in a publicly.
+There are two different ways to spam, both will be explained in section 5.1.
+
+I must stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this publicly.
 
 ### 5.1 Starting spam
 
@@ -253,7 +263,17 @@ I must stress that you should first test, and then use this in a private server.
 
 (Left square bracket, generally located diagonally from the enter key.)
 
-You will be presented with an input prompt asking you how many messages you would like to send. The value you enter should not contain any commas. Upon clicking “Ok” or pressing the Enter key the script will start sending messages in a numerical order with the intent to spawn pokemon. Messages are sent at random intervals based on the setting in the .ini file, which is measured in milliseconds. By default it is set to “500,1000”. This means it will wait at least half a second but no longer than 1 second before sending another message.  It will continue to send messages until a pause key is pressed, or it reaches the number of messages it was assigned in the input prompt.
+You will be presented with an input prompt asking you how many messages you would like to send. The value you enter should not contain any commas. Upon clicking “Ok” or pressing the Enter key the script will start sending messages in a numerical order with the intent to spawn pokemon.
+
+![messagespam1] - In this case I've entered the number 13 into the prompt.
+
+Messages are sent at random intervals based on the setting in the .ini file, which is measured in milliseconds. By default it is set to “500,1000”. This means it will wait at least half a second but no longer than 1 second before sending another message.  It will continue to send messages until a pause key is pressed, or it reaches the number of messages it was assigned in the input prompt.
+
+#### Ctrl+[
+
+Functions the exact same way as the numerical spammer, except instead of numbers it will generate a random pokemon.
+
+![messagespam2] - In this case I've entered the number 3 into the prompt.
 
 ### 5.2 Pausing or canceling spam
 
@@ -275,3 +295,5 @@ Will pause or unpause the counting messages after they have begun. To cancel the
 [marketsell4]: https://i.imgur.com/HpTu66U.png
 [marketbuy1]: https://i.imgur.com/P8DglVm.png
 [marketbuy2]: https://i.imgur.com/D21THXU.png
+[messagespam1]: https://i.imgur.com/1a9JxX6.png
+[messagespam2]: https://i.imgur.com/nKdyyQq.png
