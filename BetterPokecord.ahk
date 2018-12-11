@@ -1,8 +1,9 @@
 #NoEnv
 #SingleInstance
 SetTitleMatchMode, 2
+SetKeyDelay, 60
 SetWorkingDir %A_ScriptDir%
-IniRead, vPrefix, Settings.ini, System, Prefix
+IniRead, Prefix, Settings.ini, System, Prefix
 IniRead, MinInterval, Settings.ini, System, Spam_Msg_Interval_Min
 IniRead, MaxInterval, Settings.ini, System, Spam_Msg_Interval_Max
 IniRead, BootCount, Settings.ini, Stats, Boot_Count
@@ -21,7 +22,8 @@ OnExit, saveandexit
 End::Suspend
 !s::Gosub, showstats
 [::Pause
-![::Gosub, spam
+![::Gosub, spamnum
+^[::Gosub, spamspawn
 +Enter::Gosub, catchpokemon
 +\::Gosub, setpokemon
 NumLock::Gosub, latestcatch
@@ -30,10 +32,11 @@ NumpadDiv::Gosub, searchiv
 NumpadMult::Gosub, searchprice
 NumpadSub::Gosub, marketsell
 NumpadAdd::Gosub, marketbuy
+^NumpadAdd::Gosub, marketinfo
 catchpokemon:
     SetKeyDelay, 1
     WinActivate, Discord
-    Send, %vPrefix%catch{Space}
+    Send, %Prefix%catch{Space}
     Input, vPokemon, i v t20, {Enter}, %vPokemonList%
     if (ErrorLevel = "match") {
         Send, {Enter}
@@ -71,30 +74,26 @@ setpokemon:
     }
     Return
 latestcatch:
-    SetKeyDelay, 100
     WinActivate, Discord
-    Send, %vPrefix%info latest{Enter}
+    Send, %Prefix%info latest{Enter}
     TotalMessagesSent += 1
     MessagesSent += 1
     Return
 checkspecies:
-    SetKeyDelay, 100
     WinActivate, Discord
-    Send, %vPrefix%pokemon --name %vPokemon%{Enter}
+    Send, %Prefix%pokemon --name %vPokemon%{Enter}
     TotalMessagesSent += 1
     MessagesSent += 1
     Return
 searchiv:
-    SetKeyDelay, 60
     WinActivate, Discord
-    Send, %vPrefix%market search --name %vPokemon% --order iv descending --showiv{Enter}
+    Send, %Prefix%market search --name %vPokemon% --order iv descending --showiv{Enter}
     TotalMessagesSent += 1
     MessagesSent += 1
     Return
 searchprice:
-    SetKeyDelay, 60
     WinActivate, Discord
-    Send, %vPrefix%market search --name %vPokemon% --order price ascending --showiv{Enter}
+    Send, %Prefix%market search --name %vPokemon% --order price ascending --showiv{Enter}
     TotalMessagesSent += 1
     MessagesSent += 1    
     Return
@@ -110,11 +109,11 @@ marketsell:
     {
         selllarray := StrSplit(A_LoopField, A_Space)
         sellpokemon := selllarray[7]
-        Send, %vPrefix%market list %sellpokemon% %sellprice%{Enter}
+        Send, %Prefix%market list %sellpokemon% %sellprice%{Enter}
         TotalMessagesSent += 1
         MessagesSent += 1
     }
-    Send, %vPrefix%confirmlist{Enter}
+    Send, %Prefix%confirmlist{Enter}
     TotalMessagesSent += 1
     MessagesSent += 1    
     Return
@@ -126,32 +125,90 @@ marketbuy:
     {
         buyarray := StrSplit(A_LoopField, A_Space)
         buypokemon := buyarray[6]
-        Send, %vPrefix%market buy %buypokemon%{Enter}
+        Send, %Prefix%market buy %buypokemon%{Enter}
         TotalMessagesSent += 1
         MessagesSent += 1
     }
-    Send, %vPrefix%confirmbuy{Enter}
+    Send, %Prefix%confirmbuy{Enter}
     TotalMessagesSent += 1
     MessagesSent += 1    
     Return
-spam:
-    SetKeyDelay, 80
+marketinfo:
+    SetKeyDelay, 120
+    Send, {CtrlDown}c{CtrlUp}
+    WinActivate, Discord
+    Loop, Parse, Clipboard, `n
+    {
+        infoarray := StrSplit(A_LoopField, A_Space)
+        infopokemon := infoarray[6]
+        Send, %Prefix%market info %infopokemon%{Enter}
+        TotalMessagesSent += 1
+        MessagesSent += 1
+    }
+    Return
+spamnum:
     InputBox, totalmessages, How Many Messages to Send?
     If (ErrorLevel = 1) {
         Return
     }
-    Loop {
-        vmessagecounter += 1
-        spammsg := Commify(vmessagecounter)
+    While A_Index <= totalmessages {
+        Clipboard := "``" Commify(A_Index) "/" Commify(totalmessages) " (" Percentage(A_Index,totalmessages) ")``"
         WinActivate, Discord
-        Send, ``%spammsg%``{Enter}
+        Send, ^v {Enter}
         TotalMessagesSent += 1
         MessagesSent += 1
-        If (A_Index >= totalmessages) {
-            vmessagecounter = 0
-            Break
+        Sleep, Random(MinInterval, MaxInterval)
+    }
+    Return
+spamspawn:
+    InputBox, totalpokemon, How many Pokemon to spawn?
+    If (ErrorLevel = 1) {
+        Return
+    }
+    vPokemonArray := ["Kabuto","Mew"]
+    Loop, Parse, vPokemonList, CSV
+    {
+        vPokemonArray.push(A_LoopField)
+    }
+    Natures := ["Adamant","Bashful","Bold","Brave","Calm","Careful","Docile","Gentile","Hardy","Hasty","Impish","Jolly","Lax","Loneley","Mild","Modest","Naive","Naughty","Quiet","Quirky","Rash","Relaxed","Sassy","Serious","Timid"]
+    While A_Index <= totalpokemon {
+        Random, Level  , 1, 100
+        Random, HPIV   , 1, 31
+        Random, AtkIV  , 1, 31
+        Random, DefIV  , 1, 31
+        Random, SAtkIV , 1, 31
+        Random, SDefIV , 1, 31
+        Random, SPIV   , 1, 31
+        Random, isShiny, 1, 4096
+        spawnedpokemon := vPokemonArray[Random(1, vPokemonArray.MaxIndex())]
+        spawnednature := Natures[Random(1, Natures.MaxIndex())]
+        totalIV := Percentage((HPIV+AtkIV+DefIV+SAtkIV+SDefIV+SPIV),186)
+        totalcount := "# " Commify(A_Index) "/" Commify(totalpokemon) " (" Percentage(A_Index,totalpokemon) ")"
+        Clipboard =
+        (Ltrim
+            ``````cs
+            %totalcount%
+            Level   : %Level%
+            Pokemon : %spawnedpokemon%
+            Total IV: %totalIV%
+            Nature  : %spawnednature%
+
+            HP      : %HPIV%/31
+            Atk     : %AtkIV%/31
+            Def     : %DefIV%/31
+            sAtk    : %SAtkIV%/31
+            sDef    : %SDefIV%/31
+            Spd     : %SPIV%/31``````
+        )
+        Send, ^v {Enter}
+        MessagesSent += 1
+        TotalMessagesSent += 1
+        if (isShiny = 1) {
+            Send, :star2:SHINY:star2:{Enter}
+            MessagesSent += 1
+            TotalMessagesSent += 1
         }
-        Sleep, fRandom(MinInterval, MaxInterval)
+        Sleep, Random(1000,2000)
     }
     Return
 showstats:
@@ -178,10 +235,6 @@ UpdateIni:
 saveandexit:
     Gosub, UpdateIni
     ExitApp
-fRandom(x, y) {
-    Random, vfRandom, x, y
-    Return vfRandom
-}
 Commify(n) {
     If (n <= 99) {
         Return n
@@ -193,4 +246,15 @@ Commify(n) {
     }
     i := (j := SubStr(n, 1, Mod(l, d))) . (j ? s : "") . SubStr(i, 1, -1)
     Return i
+}
+Percentage(s,t) {
+    if s/t = 1{
+        return "100%"
+    }
+    p := SubStr((s/t),3,2) . "." . SubStr((s/t),5,2) . "%"
+    Return p
+}
+Random(x, y) {
+    Random, r, x, y
+    Return r
 }
