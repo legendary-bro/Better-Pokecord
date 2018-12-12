@@ -80,7 +80,7 @@ I've included a compiled .exe of the script itself but it will not run on 32-bit
 
 ### 0.3 Contact me
 
-You can contact me on Discord directly by sending a friend request to "Giovanni#9627".
+You can contact me on Discord directly by sending a friend request to "Cyrus#9627".
 
 ### 0.4 Use this script at your own risk
 
