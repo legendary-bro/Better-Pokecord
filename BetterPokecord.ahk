@@ -1,5 +1,5 @@
 #NoEnv
-#SingleInstance
+#SingleInstance, force
 SetTitleMatchMode, 2
 SetKeyDelay, 60
 SetWorkingDir %A_ScriptDir%
@@ -107,11 +107,15 @@ marketsell:
     WinActivate, Discord
     Loop, Parse, Clipboard, `n
     {
-        selllarray := StrSplit(A_LoopField, A_Space)
-        sellpokemon := selllarray[7]
-        Send, %Prefix%market list %sellpokemon% %sellprice%{Enter}
-        TotalMessagesSent += 1
-        MessagesSent += 1
+        Loop, Parse, A_LoopField, % A_Space
+        {
+            If (A_Index = 7) {
+                Send, %Prefix%market list %A_LoopField% %sellprice%{Enter}
+                TotalMessagesSent += 1
+                MessagesSent += 1
+                Break
+            }
+        }
     }
     Send, %Prefix%confirmlist{Enter}
     TotalMessagesSent += 1
@@ -123,11 +127,15 @@ marketbuy:
     WinActivate, Discord
     Loop, Parse, Clipboard, `n
     {
-        buyarray := StrSplit(A_LoopField, A_Space)
-        buypokemon := buyarray[6]
-        Send, %Prefix%market buy %buypokemon%{Enter}
-        TotalMessagesSent += 1
-        MessagesSent += 1
+        Loop, Parse, A_LoopField, % A_Space
+        {
+            If (A_Index = 6) {
+                Send, %Prefix%market buy %A_LoopField%{Enter}
+                TotalMessagesSent += 1
+                MessagesSent += 1
+                Break
+            }
+        }
     }
     Send, %Prefix%confirmbuy{Enter}
     TotalMessagesSent += 1
@@ -139,9 +147,15 @@ marketinfo:
     WinActivate, Discord
     Loop, Parse, Clipboard, `n
     {
-        infoarray := StrSplit(A_LoopField, A_Space)
-        infopokemon := infoarray[6]
-        Send, %Prefix%market info %infopokemon%{Enter}
+        Loop, Parse, A_LoopField, % A_Space
+        {
+            If (A_Index = 6) {
+                Send, %Prefix%market info %A_LoopField%{Enter}
+                TotalMessagesSent += 1
+                MessagesSent += 1
+                Break
+            }
+        }
         TotalMessagesSent += 1
         MessagesSent += 1
     }
