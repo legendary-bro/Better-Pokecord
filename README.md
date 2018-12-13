@@ -193,7 +193,7 @@ The “home” key. Will check all Pokemon currently owned in a species. Relies 
 
 ## 4.0 Market
 
-I will be focusing on this more in future releases. I’m happy with what it does so far but would like to expand what it's capable of.
+I will be focusing on this more in future releases. I’m happy with what it does so far but would like to expand what it's capable of. The quick sell, buy, and info commands will not work with shiny pokemon.
 
 ### 4.1 Search by high IV
 
