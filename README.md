@@ -10,9 +10,7 @@ This isn't a self bot and its not gonna auto catch stuff for you. You have other
 
 [0.2 Requirements](#02-requirements)
 
-[0.3 Contact me](#03-contact-me)
-
-[0.4 Disclaimer](#04-use-this-script-at-your-own-risk)
+[0.3 Disclaimer](#03-use-this-script-at-your-own-risk)
 
 ### [**1.0 Script Settings**](#10-script-settings-1)
 
@@ -78,11 +76,7 @@ A working NumPad on your keyboard, the initial release is heavily reliant on the
 
 I've included a compiled .exe of the script itself but it will not run on 32-bit systems. If you do not want to use the compiled .exe version then you will need [AutoHotKey](https://www.autohotkey.com/) to use the .ahk file instead. AutoHotKey is free, and is not a large download. Both the .ahk and the .exe do the same exact thing in terms of functionality, it is merely a matter of convenience as to which one you would like to use.
 
-### 0.3 Contact me
-
-You can contact me on Discord directly by sending a friend request to "Cyrus#9627".
-
-### 0.4 Use this script at your own risk
+### 0.3 Use this script at your own risk
 
 I’ve been using scripts on PokeCord for some time and while the risk is not at self bot levels & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
 
