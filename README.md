@@ -52,6 +52,8 @@ This isn't a self bot and its not gonna auto catch stuff for you. You have other
 
 [4.5 Get multiple market infos](#45-get-multiple-market-infos)
 
+[4.6 Quick trade](#46-quick-trade)
+
 ### [**5.0 Message Spam**](#50-message-spam-1)
 
 [5.1 Starting spam](#51-starting-spam)
@@ -112,12 +114,14 @@ This means that after sending a spam message the script will wait at least half 
 
 ## 2.0 General Controls
 
+All of the hotkeys (with the exception of the hotkeys explained in sections 2.1-2.3) will not work unless Discord is the active window. This allows you to use the keys for other tasks outside of Discord, without the fear of having the script take off running on you for accidentally pressing one of the hotkeys.
+
 ### 2.1 Exiting the script
 
 #### Ctrl+End
 
 The ctrl and “end” key on your keyboard. Will close the script.
-Additionally, you can right click on the icon that appears in the system tray and simply choose “Exit”.
+Additionally, you can right click on the icon that appears in the system tray and simply choose “Exit”. This hotkey is always assigned no matter the active window.
 
 ![exitscript]
 
@@ -125,13 +129,13 @@ Additionally, you can right click on the icon that appears in the system tray an
 
 #### Shift+End
 
-Will close and reopen the script. Mostly used if you need to change the .ini file and need to reload the settings. This can also be done in the tray menu by selecting “Reload this script”.
+Will close and reopen the script. Mostly used if you need to change the .ini file and need to reload the settings, or wanted to cancel spamming. This can also be done in the tray menu by selecting “Reload this script”. This hotkey is always assigned no matter the active window.
 
 ### 2.3 Suspending hotkeys
 
 #### End
 
-Will suspend hotkey assignments until end is pressed again. (Ctrl+End will not close the script, etc.) Again, can also be done in the tray menu.
+Will suspend hotkey assignments until end is pressed again. (Ctrl+End will not close the script, etc.) Again, can also be done in the tray menu. This hotkey is always assigned no matter the active window.
 
 ### 2.4 Checking statistics
 
@@ -155,7 +159,7 @@ I need to very briefly explain that there is a “Pokemon variable” in the scr
 
 (backslash is typically directly above the enter key)
 
-Similar to Shift+Enter, but instead of “catch “ appearing in the text bar it will briefly display the word “waiting” in the text bar before waiting for the input. To be used when you want to change the PV but don't need to catch anything. 20 second timeout/clear rule also applies here.
+Similar to Shift+Enter, but instead of “catch “ appearing in the text bar it will display the word “waiting” in the text bar before waiting for user input. To be used when you want to change the PV but don't need to catch anything. 20 second timeout/clear rule also applies here.
 
 ### 3.3 Known issues with the PV system
 
@@ -187,7 +191,7 @@ The “home” key. Will check all Pokemon currently owned in a species. Relies 
 
 ## 4.0 Market
 
-I will be focusing on this more in future releases. I’m happy with what it does so far but would like to expand what it's capable of. The quick sell, buy, and info commands will not work with shiny pokemon.
+I will be focusing on this more in future releases. I’m happy with what it does so far but would like to expand what it's capable of. The commands in sections 4.3-4.6 will not work with shiny pokemon.
 
 ### 4.1 Search by high IV
 
@@ -209,7 +213,7 @@ The multiply key on the NumPad(*). Will do a market search for the PV and priori
 
 #### NumPadSubtract
 
-The subtract key on the NumPad(-). Used to quickly list multiple or single Pokemon on the market. This one will be explained with pictures. As I think it's the most clear way.
+The subtract key on the NumPad(-). Used to quickly list multiple or single Pokemon on the market. This macro is limited to listing things 10 at a time, as the first listing commands begin to time out sometime around the 11th listing. You can highlight more than 10 Pokemon, there is no need to carefully count them if you dont want to, but only the first 10, starting from the top of the list will be put to market.
 
 ![marketsell1]
 
@@ -231,7 +235,7 @@ If you are going to list something for a value that contains commas the value yo
 
 #### NumPadAdd
 
-The add key on the numpad (+). Functions the exact same way as what is mentioned above, but instead of selling, it will buy multiple pokemon from the market.
+The add key on the numpad (+). Functions in an almost identical manner as what is mentioned above, but instead of selling, it will buy multiple pokemon from the market. You can buy a whole page (20 Pokemon) using this command if you want, it is not limited to 10.
 
 ![marketbuy1]
 
@@ -243,7 +247,13 @@ Looks like I’ll be able to resell these for a little bit of profit.
 
 #### Ctrl+NumPadAdd
 
-Is used in the exact same way as the above two examples, but it will show you the detailed info for pokemon on the market.
+Used in the same way as the above two examples, but it will show you the detailed info for pokemon on the market.
+
+### 4.6 Quick trade
+
+#### Ctrl+NumPadSubtract
+
+Used in the same way as the other market commands but this will add multiple pokemon from your inventory to a trade window. You will need to manually copy what you highlighted to the clipboard using Ctrl+c before using this. For safety, it will not send the confirm command after it adds to the trade window. You will need to confirm the trade yourself.
 
 ## 5.0 Message Spam
 
