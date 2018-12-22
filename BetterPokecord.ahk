@@ -210,7 +210,7 @@ spamspawn:
     }
     Natures := ["Adamant","Bashful","Bold","Brave","Calm","Careful","Docile","Gentile","Hardy","Hasty","Impish","Jolly","Lax","Loneley","Mild","Modest","Naive","Naughty","Quiet","Quirky","Rash","Relaxed","Sassy","Serious","Timid"]
     While A_Index <= totalpokemon {
-        Random, Level  , 1, 100
+        Random, Level  , 1, 90
         Random, HPIV   , 1, 31
         Random, AtkIV  , 1, 31
         Random, DefIV  , 1, 31
@@ -246,7 +246,7 @@ spamspawn:
             MessagesSent += 1
             TotalMessagesSent += 1
         }
-        Sleep, Random(1000,2000)
+        Sleep, Random(MinInterval,MaxIndex)
     }
     Return
 showstats:
