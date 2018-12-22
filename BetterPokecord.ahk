@@ -99,6 +99,7 @@ marketsell:
     InputBox, sellprice, How Much To List Each For?
     If (ErrorLevel = 1)
         Return
+    WinActivate, Discord
     Loop, Parse, Clipboard, `n
     {
         parsesanity := 0
@@ -190,6 +191,7 @@ spamnum:
     InputBox, totalmessages, How Many Messages to Send?
     If (ErrorLevel = 1)
         Return
+    WinActivate, Discord
     While A_Index <= totalmessages {
         Clipboard := "``" Commify(A_Index) "/" Commify(totalmessages) " (" Percentage(A_Index,totalmessages) ")``"
         Send, ^v {Enter}
@@ -202,6 +204,7 @@ spamspawn:
     InputBox, totalpokemon, How many Pokemon to spawn?
     If (ErrorLevel = 1)
         Return
+    WinActivate, Discord
     vPokemonArray := ["Kabuto","Mew"]
     Loop, Parse, vPokemonList, CSV
     {
