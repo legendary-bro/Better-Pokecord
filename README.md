@@ -171,7 +171,7 @@ Similar to Shift+Enter, but instead of “catch “ appearing in the text bar it
 
 ### 3.3 Known issues with the PV system
 
-I did not scour the entire list of 800+ Pokemon to confirm this but at the time of writing I believe the only two Pokemon this must be used for is Mew and Kabuto. If the name of the Pokemon you are trying to catch is part of another Pokemons name (ex.Mew/Mewtwo) you must press the Enter key to send the message as you normally would. If you are using the backslash hotkey to just change the PV you must press the spacebar instead.
+I did not scour the entire list of 800+ Pokemon to confirm this but at the time of writing I believe the only two Pokemon this must be used for is Mew and Kabuto. If the name of the Pokemon you are trying to catch is part of another Pokemons name (ex.Mew/Mewtwo) you must press the Enter key to send the message as you normally would. If you are using the backslash hotkey to just change the PV you must press the backslash key again.
 
 For example:
 
@@ -179,7 +179,7 @@ For example:
 
 or
 
-*waiting* mew{Space}
+*waiting* mew{Backslash}
 
 ### 3.4 Latest catch
 
