@@ -60,11 +60,11 @@ catchpokemon:
 setpokemon:
     SetKeyDelay, -1
     Send, waiting{Space}
-    Input, vPokemon, i v t20,{Space}, %vPokemonList%
+    Input, vPokemon, i v t20,{\}, %vPokemonList%
     if (ErrorLevel = "match") {
         Send, {Ctrl Down}a{Ctrl Up}{BackSpace}
     }
-    if (ErrorLevel = "EndKey:Space") {
+    if (ErrorLevel = "EndKey:\") {
         Send, {Ctrl Down}a{Ctrl Up}{BackSpace}
     }
     if (ErrorLevel = "timeout") {
