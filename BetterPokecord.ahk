@@ -91,7 +91,7 @@ searchiv:
 searchprice:
     Send, %Prefix%market search --name %vPokemon% --order price ascending --showiv{Enter}
     TotalMessagesSent += 1
-    MessagesSent += 1    
+    MessagesSent += 1
     Return
 marketsell:
     SetKeyDelay, 120
@@ -101,16 +101,16 @@ marketsell:
         Return
     Loop, Parse, Clipboard, `n
     {
+        parsesanity := 0
         loopcount += 1
-        Loop, Parse, A_LoopField, % A_Space
-        {
-            If (A_Index = 7) {
-                Send, %Prefix%market list %A_LoopField% %sellprice%{Enter}
-                TotalMessagesSent += 1
-                MessagesSent += 1
-                Break
-            }
-        }
+        marketarray := StrSplit(A_LoopField, A_Space)
+        If (marketarray[1]="Mega"||marketarray[1]="Mime"||marketarray[2]="Mime")
+            parsesanity += 1
+        If (marketarray[3]="X"||marketarray[3]="Y")
+            parsesanity += 1
+        Send % Prefix "market list " marketarray[7+parsesanity] " " sellprice "`r"
+        TotalMessagesSent += 1
+        MessagesSent += 1
         If (A_Index = 10) {
             Send, %Prefix%confirmlist{Enter}
             TotalMessagesSent += 1
@@ -121,8 +121,8 @@ marketsell:
     If (loopcount != 10) {
         Send, %Prefix%confirmlist{Enter}
         TotalMessagesSent += 1
-        MessagesSent += 1 
-    }    
+        MessagesSent += 1
+    }
     loopcount := 0
     Return
 marketbuy:
@@ -130,43 +130,43 @@ marketbuy:
     Send, {CtrlDown}c{CtrlUp}
     Loop, Parse, Clipboard, `n
     {
+        parsesanity := 0
         loopcount += 1
-        Loop, Parse, A_LoopField, % A_Space
-        {
-            If (A_Index = 6) {
-                Send, %Prefix%market buy %A_LoopField%{Enter}
-                TotalMessagesSent += 1
-                MessagesSent += 1
-                Break
-            }
-        }
+        marketarray := StrSplit(A_LoopField, A_Space)
+        If (marketarray[3] = "Mega"||marketarray[3] = "Mime"||marketarray[4] = "Mime")
+            parsesanity += 1
+        If (marketarray[5]="X"||marketarray[5]="Y")
+            parsesanity += 1
+        Send % Prefix "market buy " marketarray[6+parsesanity] "`r"
+        TotalMessagesSent += 1
+        MessagesSent += 1
         If (A_Index = 10) {
             Send, %Prefix%confirmbuy{Enter}
             TotalMessagesSent += 1
-            MessagesSent += 1 
+            MessagesSent += 1
         }
     }
     If (loopcount != 10) {
         Send, %Prefix%confirmbuy{Enter}
         TotalMessagesSent += 1
-        MessagesSent += 1 
+        MessagesSent += 1
     }
-    loopcount := 0 
+    loopcount := 0
     Return
 marketinfo:
     SetKeyDelay, 120
     Send, {CtrlDown}c{CtrlUp}
     Loop, Parse, Clipboard, `n
     {
-        Loop, Parse, A_LoopField, % A_Space
-        {
-            If (A_Index = 6) {
-                Send, %Prefix%market info %A_LoopField%{Enter}
-                TotalMessagesSent += 1
-                MessagesSent += 1
-                Break
-            }
-        }
+        parsesanity := 0
+        marketarray := StrSplit(A_LoopField, A_Space)
+        If (marketarray[3]="Mega"||marketarray[3]="Mime"||marketarray[4]="Mime")
+            parsesanity += 1
+        If (marketarray[5]="X"||marketarray[5]="Y")
+            parsesanity += 1
+        Send % Prefix "market info " marketarray[6+parsesanity] "`r"
+        TotalMessagesSent += 1
+        MessagesSent += 1
     }
     Return
 trade:
@@ -174,15 +174,17 @@ trade:
     Send, %Prefix%p add{Space}
     Loop, Parse, Clipboard, `n
     {
-        Loop, Parse, A_LoopField, % A_Space
-        {
-            If (A_Index = 7)
-                Send, %A_LoopField%{Space}
-        }
+        parsesanity := 0
+        marketarray := StrSplit(A_LoopField, A_Space)
+        If (marketarray[1]="Mega"||marketarray[1]="Mime"||marketarray[2]="Mime")
+            parsesanity += 1
+        If (marketarray[3]="X"||marketarray[3]="Y")
+            parsesanity += 1
+        Send % marketarray[7+parsesanity] " "
     }
     Send, {Enter}
     TotalMessagesSent += 1
-    MessagesSent += 1    
+    MessagesSent += 1
     Return
 spamnum:
     InputBox, totalmessages, How Many Messages to Send?
