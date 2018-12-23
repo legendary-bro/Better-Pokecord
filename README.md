@@ -143,7 +143,7 @@ Will close and reopen the script. Mostly used if you need to change the .ini fil
 
 #### End
 
-Will suspend hotkey assignments until end is pressed again. (Ctrl+End will not close the script, etc.) Again, can also be done in the tray menu. This hotkey is always assigned no matter the active window.
+Will suspend hotkey assignments until end is pressed again. (Ctrl+End will not close the script, etc.) Again, can also be done in the tray menu. This hotkey is always assigned no matter the active window. This hotkey cannot be suspended.
 
 ### 2.4 Checking statistics
 
