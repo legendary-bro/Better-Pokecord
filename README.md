@@ -12,7 +12,9 @@ This isn't a self bot and its not gonna auto catch stuff for you. You have other
 
 [0.3 How to download](#03-how-to-download)
 
-[0.4 Disclaimer](#04-use-this-script-at-your-own-risk)
+[0.4 Contacting me on Discord](#04-contacting-me-on-discord)
+
+[0.5 Disclaimer](#05-use-this-script-at-your-own-risk)
 
 ### [**1.0 Script Settings**](#10-script-settings-1)
 
@@ -86,7 +88,11 @@ Head over to the [releases page](https://github.com/eddhuh/Better-Pokecord/relea
 
 You can clone/download directly from the master branch if you'd like. But you will not get an .exe file should you need one, and I will not be providing support for any features committed to the master branch that are not yet in a release.
 
-### 0.4 Use this script at your own risk
+### 0.4 Contacting me on Discord
+
+If you want to contact me on Discord you can do so by sending a friend request to `.devise#9627`
+
+### 0.5 Use this script at your own risk
 
 I’ve been using scripts on PokeCord for some time and while the risk is not at self bot levels & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
 
