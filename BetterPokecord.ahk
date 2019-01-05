@@ -246,7 +246,7 @@ spamspawn:
             MessagesSent += 1
             TotalMessagesSent += 1
         }
-        Sleep, Random(MinInterval,MaxIndex)
+        Sleep, Random(MinInterval,MaxInterval)
     }
     Return
 showstats:
