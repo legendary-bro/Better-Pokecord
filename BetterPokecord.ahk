@@ -175,7 +175,7 @@ reload:
 
 buystone:
     gui, submit
-    if (strlen(buystone)<= 0) {
+    if (strlen(buystone) <= 0) {
         gosub, shopmenu
         return
     }
@@ -191,7 +191,7 @@ buystone:
 
 buynature:
     gui, submit
-    if (strlen(buynature)<= 0) {
+    if (strlen(buynature) <= 0) {
         gosub, shopmenu
         return
     }
@@ -204,7 +204,7 @@ buynature:
 
 buyheld:
     gui, submit
-    if (strlen(buyheld)<= 0) {
+    if (strlen(buyheld) <= 0) {
         gosub, shopmenu
         return
     }
@@ -216,20 +216,18 @@ buyheld:
 
 buyxp:
     gui, submit
-    if ((buy30m+buy1h+buy2h+buy4h) == 0) {
-        gosub, shopmenu
-        return
+    if ((buy30m+buy1h+buy2h+buy4h) == 1) {
+        sleepwin("Discord",20)
+        if (buy30m = 1)
+            send, %prefix%buy 1`r
+        if (buy1h = 1)
+            send, %prefix%buy 2`r
+        if (buy2h = 1)
+            send, %prefix%buy 3`r
+        if (buy4h = 1)
+            send, %prefix%buy 4`r
+        gosub, msgcount
     }
-    sleepwin("Discord",20)
-    if (buy30m = 1)
-        send, %prefix%buy 1`r
-    if (buy1h = 1)
-        send, %prefix%buy 2`r
-    if (buy2h = 1)
-        send, %prefix%buy 3`r
-    if (buy4h = 1)
-        send, %prefix%buy 4`r
-    gosub, msgcount
     gosub, shopmenu
     return
 
