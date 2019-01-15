@@ -100,9 +100,9 @@ I’ve been using scripts on Pokecord for some time and while the risk is not at
 
 All 3 menus will open when pressing the ctrl key + an arrow key while Discord is the active window.
 
-Ctrl+Down: Options menu
-Ctrl+Left: Shop menu
-Ctrl+Right: Market menu
+* Ctrl+Down: Options menu
+* Ctrl+Left: Shop menu
+* Ctrl+Right: Market menu
 
 The menus open at the top of your screen and will move the mouse into its area. Please be sure the correct channel is open in Discord before you press a button on the GUI windows. The script will not check to make sure you are in a certain channel before beginning to type a message.
 
