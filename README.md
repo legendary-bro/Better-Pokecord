@@ -1,8 +1,8 @@
-# Better PokeCord
+# Better Pokecord
 
-An ahk script designed to spawn pokemon in addition to make catching/interacting with the market easier, and in general cut down on the amount of typing PokeCord requires.
+An ahk script designed to spawn pokemon in addition to make catching/interacting with the market easier, and in general cut down on the amount of typing Pokecord requires.
 
-This isn't a self bot and its not gonna auto catch stuff for you. You have other options aside from this if that's what you're after. I designed this with the intent of still being able to use Discord as I normally do. I just wanted to make the catching, spawning, inventory, market commands etc less typing intensive if I was interacting with PokeCord. I'm learning the ahk language in my free time and just uploading my work to GitHub. If you use it, great, if you think its shit, great, if you wanna help out with the project, fantastic, send me a pull request.
+This isn't a self bot and its not gonna auto catch stuff for you. You have other options aside from this if that's what you're after. I designed this with the intent of still being able to use Discord as I normally do. I just wanted to make the catching, spawning, inventory, market commands etc less typing intensive if I was interacting with Pokecord. I'm learning the ahk language in my free time and just uploading my work to GitHub. If you use it, great, if you think its shit, great, if you wanna help out with the project, fantastic, send me a pull request.
 
 ## Table of Contents
 
@@ -16,21 +16,21 @@ This isn't a self bot and its not gonna auto catch stuff for you. You have other
 
 [0.5 Disclaimer](#05-use-this-script-at-your-own-risk)
 
-### [**1.0 Script Settings**](#10-script-settings-1)
+### [**1.0 GUI Controls**](#10-gui-controls-1)
 
-[1.1 Changing the prefix](#11-changing-the-prefix)
+[1.1 Options Menu](#11-options-menu)
 
-[1.2 Changing message spam cooldown](#12-changing-message-spam-cooldown)
+[1.2 Shop Menu](#12-shop-menu)
 
-### [**2.0 General Controls**](#20-general-controls-1)
+[1.3 Market Menu](#13-market-menu)
+
+### [**2.0 Hotkey Controls**](#20-hotkey-controls-1)
 
 [2.1 Exiting the script](#21-exiting-the-script)
 
 [2.2 Reloading the script](#22-reloading-the-script)
 
 [2.3 Suspending hotkeys](#23-suspending-hotkeys)
-
-[2.4 Checking statistics](#24-checking-statistics)
 
 ### [**3.0 Pokemon Inventory**](#30-pokemon-inventory-1)
 
@@ -66,19 +66,19 @@ This isn't a self bot and its not gonna auto catch stuff for you. You have other
 
 ### 0.1 Features
 
-* Script to spam messages to level and spawn pokemon
-* Assisted catch and inventory macro's
-* Navigating the market is less time consuming
+* GUI support
 * Macro's to sell or buy pokemon in bulk
-* More features planned for future releases including GUI support, more market macro's and further customization according to user preference
+* Navigating the market is less time consuming
+* Assisted catch and inventory macro's
+* Script to spam messages to level and spawn pokemon
 
-![guipreview]
+![Options menu](https://i.imgur.com/VpkRw6E.png) ![Market menu](https://i.imgur.com/zejLXts.png)
 
-**picture shown is not yet in the script, layout or features may change before graphical user interface is completed*
+![Shop menu](https://i.imgur.com/GkKN7GK.png)
 
 ### 0.2 Requirements
 
-A working NumPad on your keyboard, the initial release is heavily reliant on the use of HotKeys, most of which I have bound to or around the NumPad.
+A working NumPad on your keyboard, some features are reliant on the use of hotKeys, most of which I have bound to or around the NumPad.
 
 I've included a compiled .exe of the script itself but it will not run on 32-bit systems. If you do not want to use the compiled .exe version then you will need [AutoHotKey](https://www.autohotkey.com/) to use the .ahk file instead. AutoHotKey is free, and is not a large download. Both the .ahk and the .exe do the same exact thing in terms of functionality, it is merely a matter of convenience as to which one you would like to use.
 
@@ -94,39 +94,67 @@ If you want to contact me on Discord you can do so by sending a friend request t
 
 ### 0.5 Use this script at your own risk
 
-I’ve been using scripts on PokeCord for some time and while the risk is not at self bot levels & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
+I’ve been using scripts on Pokecord for some time and while the risk is not at self bot levels & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
 
-## 1.0 Script Settings
+## 1.0 GUI controls
 
-Whether you prefer to use the .ahk file or the compiled .exe you will also notice a “Settings.ini” file in the folder. The script uses this to keep track of statistics should you become curious and want to take a look, but it also stores the prefix the script will use to send commands and the intervals at which to send the spam messages. You can open this file in any text editor to make changes to system or statistical values.
+All 3 menus will open when pressing the ctrl key + an arrow key while Discord is the active window.
 
-### 1.1 Changing the prefix
+Ctrl+Down: Options menu
+Ctrl+Left: Shop menu
+Ctrl+Right: Market menu
 
-You can change the prefix from its default (p!) to almost anything you want. By default it should look something like what is pictured below.
+The menus open at the top of your screen and will move the mouse into its area. Please be sure the correct channel is open in Discord before you press a button on the GUI windows. The script will not check to make sure you are in a certain channel before beginning to type a message.
 
-![prefixdefault]
+### 1.1 Options menu
 
-**If you wanted to change this to something else and it contains one of these 4 characters ( ! ^ + & ) then you must leave them in curly brackets as I have shown in the default setting.** This is due to the language used to code the script. However if you wanted to change it to just the period key for example then you would not need the brackets. The curly brackets are only needed for those 4 specific characters mentioned earlier. I will provide some examples for further clarity.
+![Options menu](https://i.imgur.com/VpkRw6E.png)
 
- ![prefixexample1] - would send “^lol” as the prefix
+#### Exit
 
- ![prefixexample2] - would send “pb&j” as the prefix
+Closes the script and exits.
 
- ![prefixexample3] - would send “.” as the prefix
+#### Reload
 
- ![prefixexample4] - would send “prEfiX” as the prefix
+Closes the script and reloads it.
 
-After changing the prefix you need to save the document, and if the script is currently running, reload the script. This can be done by using the reload hotkey, or by closing and re-opening the script manually.
+#### Set prefix
 
-### 1.2 Changing message spam cooldown
+You can change the prefix from its default (p!) to anything you want. By default it should look exactly like the image above this text.
 
-There are two values within the Settings.ini file that control how long the script should wait in milliseconds before sending another message when its been instructed to begin spamming. The default values are 500 and 1000 and should look like this:
+Please note that the curly brackets seen in the text box will not be sent in messages. The script will place curly brackets around some special characters (! # ^ +) if you use one while changing the prefix.
 
-![spamcooldown]
+#### Set spam message cooldown
+
+There are two values within the Settings.ini file that control how long the script should wait in milliseconds before sending another message when its been instructed to begin spamming. The default values are 500 and 1000.
 
 This means that after sending a spam message the script will wait at least half a second but no longer than one second before sending another message. The script will randomly pick a time between the Min/Max. So setting them to 3000,10500 for example would make at wait at least 3 seconds but no longer than 10.5 seconds to send the next message.
 
-## 2.0 General Controls
+#### Stats
+
+This will display a message box containing the total amount of messages the script has sent, how many Pokemon it has caught etc.
+
+#### Bal/Daily
+
+Self explanatory, will show you your bal or pull up the daily reward
+
+### 1.2 Shop menu
+
+![Shop menu](https://i.imgur.com/GkKN7GK.png)
+
+I dont think anything about this menu needs to be explained in detail. You click buy and it spends the amount on the button and buys your item.
+
+### 1.3 Market menu
+
+![Market menu](https://i.imgur.com/zejLXts.png)
+
+I think this section is for the most part self explanitory as well. I will say that setting anything to "--" will tell the script not to include it in the market search. But beyond that I think people understand what to do here.
+
+#### Reset buttons
+
+your last selections are saved each time you run a search, the two reset buttons will reset everything back to a "--" state in their respective sections.
+
+## 2.0 Hotkey Controls
 
 All of the hotkeys (with the exception of the hotkeys explained in sections 2.1-2.3) will not work unless Discord is the active window. This allows you to use the keys for other tasks outside of Discord, without the fear of having the script take off running on you for accidentally pressing one of the hotkeys.
 
@@ -150,12 +178,6 @@ Will close and reopen the script. Mostly used if you need to change the .ini fil
 #### End
 
 Will suspend hotkey assignments until end is pressed again. (Ctrl+End will not close the script, etc.) Again, can also be done in the tray menu. This hotkey is always assigned no matter the active window. This hotkey cannot be suspended.
-
-### 2.4 Checking statistics
-
-#### Alt+s
-
-This will display a message box containing the total amount of messages the script has sent, how many Pokemon it has caught etc.
 
 ## 3.0 POKEMON INVENTORY
 
@@ -205,7 +227,7 @@ The “home” key. Will check all Pokemon currently owned in a species. Relies 
 
 ## 4.0 Market
 
-I will be focusing on this more in future releases. I’m happy with what it does so far but would like to expand what it's capable of. The commands in sections 4.3-4.6 will not work with mega or shiny pokemon for the time being.
+The commands in sections 4.3-4.6 will not work with shiny pokemon for the time being.
 
 ### 4.1 Search by high IV
 
