@@ -58,8 +58,7 @@ showgui(w,h,s) {
     gosub, updateini
     gui, show, center y0 w%w% h%h%, %s%
     WinGetActiveStats, s, gw, gh, gx, gy
-    if (guiactive := 0)
-        mousemove, % gw*0.5, % gh*0.5, 8
+    mousemove, % gw*0.5, % gh*0.5, 8
     return
 }
 
@@ -72,11 +71,6 @@ sleepwin(w,t) {
 return
 
 optionsmenu:
-    if winactive("Better Pokecord")
-        guiactive := 1
-    else
-        guiactive := 0
-    gui, destroy
     gui, add, button, gsaveandexit x0 y0 w160 h20 , exit
     gui, add, button, greload x0 y20 w160 h30 , reload
     gui, add, button, gshowstats x170 y0 w70 h120 default , stats
@@ -92,10 +86,6 @@ optionsmenu:
     return
 
 shopmenu:
-    if winactive("Better Pokecord")
-        guiactive := 1
-    else
-        guiactive := 0
     gui, destroy
     gui, add, text, x0 y0 w120 h20 center, stones + evo
     gui, add, text, x130 y0 w120 h20 center, natures
@@ -120,10 +110,6 @@ shopmenu:
     return
     
 marketmenu:
-    if winactive("Better Pokecord")
-        guiactive := 1
-    else
-        guiactive := 0
     gui, destroy
     gui, add, button, x10 y0 w120 h20 gmarketivreset, reset
     gui, add, text, x10 y20 w120 h20 border center, iv's
