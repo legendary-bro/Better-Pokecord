@@ -71,6 +71,7 @@ sleepwin(w,t) {
 return
 
 optionsmenu:
+    gui, destroy
     gui, add, button, gsaveandexit x0 y0 w160 h20 , exit
     gui, add, button, greload x0 y20 w160 h30 , reload
     gui, add, button, gshowstats x170 y0 w70 h120 default , stats
