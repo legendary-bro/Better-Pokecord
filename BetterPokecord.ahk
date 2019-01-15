@@ -307,7 +307,8 @@ catchpokemon:
         lastpokemoncaught := vpokemon
     }
     if (errorlevel = "timeout") {
-        send, {ctrl down}a{ctrl up}{backspace}
+        if winactive("Discord")
+            send, {ctrl down}a{ctrl up}{backspace}
     }
     return
 
@@ -320,8 +321,8 @@ setpokemon:
     if (errorlevel = "endkey:\")
         send, {ctrl down}a{ctrl up}{backspace}
     if (errorlevel = "timeout") {
-        setkeydelay, 10
-        send, {ctrl down}a{ctrl up}{backspace}
+        if winactive("Discord")
+            send, {ctrl down}a{ctrl up}{backspace}
     }
     return
 
