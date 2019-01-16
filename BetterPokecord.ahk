@@ -1,13 +1,24 @@
 #noenv
 #singleinstance, force
-setworkingdir, %a_scriptdir%
-onexit, saveandexit
-settitlematchmode, 2
-setkeydelay, 40
-
 iniread, prefix, settings.ini, system, prefix
 iniread, mininterval, settings.ini, system, spam_msg_interval_min
 iniread, maxinterval, settings.ini, system, spam_msg_interval_max
+iniread, hoptions, settings.ini, system, options
+iniread, hshop, settings.ini, system, shop
+iniread, hmarket, settings.ini, system, market
+iniread, hcatch, settings.ini, system, catch
+iniread, hset, settings.ini, system, set
+iniread, hlatest, settings.ini, system, latest
+iniread, hspecies, settings.ini, system, species
+iniread, hsearchiv, settings.ini, system, searchiv
+iniread, hsearchprice, settings.ini, system, searchprice
+iniread, hquicksell, settings.ini, system, quicksell
+iniread, htrade, settings.ini, system, trade
+iniread, hquickbuy, settings.ini, system, quickbuy
+iniread, hinfo, settings.ini, system, info
+iniread, hnumerical, settings.ini, system, numerical
+iniread, hgenerator, settings.ini, system, generator
+iniread, hpause, settings.ini, system, pause
 iniread, bootcount, settings.ini, stats, boot_count
 iniread, totalmessagessent, settings.ini, stats, total_messages_sent
 iniread, vpokemon, settings.ini, stats, pokemon
@@ -25,10 +36,14 @@ iniread, marketsdefiv, settings.ini, market, sdefiv
 iniread, marketspdiv, settings.ini, market, spdiv
 iniread, marketshiny, settings.ini, market, shiny
 iniread, marketshowiv, settings.ini, market, showiv
-
+setworkingdir, %a_scriptdir%
+onexit, saveandexit
+settitlematchmode, 2
+setkeydelay, 40
 bootcount += 1
 pokemonlist := "Bulbasaur,Ivysaur,Venusaur,Charmander,Charmeleon,Charizard,Squirtle,Wartortle,Blastoise,Caterpie,Metapod,Butterfree,Weedle,Kakuna,Beedrill,Pidgey,Pidgeotto,Rattata,Raticate,Spearow,Fearow,Ekans,Arbok,Pikachu,Raichu,Sandshrew,Sandslash,Nidoran,Nidorina,Nidoqueen,Nidoran,Nidorino,Nidoking,Clefairy,Clefable,Vulpix,Ninetales,Jigglypuff,Wigglytuff,Zubat,Golbat,Oddish,Gloom,Vileplume,Paras,Parasect,Venonat,Venomoth,Diglett,Dugtrio,Meowth,Persian,Psyduck,Golduck,Mankey,Primeape,Growlithe,Arcanine,Poliwag,Poliwhirl,Poliwrath,Abra,Kadabra,Alakazam,Machop,Machoke,Machamp,Bellsprout,Weepinbell,Victreebel,Tentacool,Tentacruel,Geodude,Graveler,Golem,Ponyta,Rapidash,Slowpoke,Slowbro,Magnemite,Magneton,Farfetchd,Doduo,Dodrio,Seel,Dewgong,Grimer,Muk,Shellder,Cloyster,Gastly,Haunter,Gengar,Onix,Drowzee,Hypno,Krabby,Kingler,Voltorb,Electrode,Exeggcute,Exeggutor,Cubone,Marowak,Hitmonlee,Hitmonchan,Lickitung,Koffing,Weezing,Rhyhorn,Rhydon,Chansey,Tangela,Kangaskhan,Horsea,Seadra,Goldeen,Seaking,Staryu,Starmie,Mr. Mime,Scyther,Jynx,Electabuzz,Magmar,Pinsir,Tauros,Magikarp,Gyarados,Lapras,Ditto,Eevee,Vaporeon,Jolteon,Flareon,Omanyte,Omastar,Kabutops,Aerodactyl,Snorlax,Articuno,Zapdos,Moltres,Dratini,Dragonair,Dragonite,Mewtwo,Chikorita,Bayleef,Meganium,Cyndaquil,Quilava,Typhlosion,Totodile,Croconaw,Feraligatr,Sentret,Furret,Hoothoot,Noctowl,Ledyba,Ledian,Spinarak,Ariados,Crobat,Chinchou,Lanturn,Pichu,Cleffa,Igglybuff,Togepi,Togetic,Natu,Xatu,Mareep,Flaaffy,Ampharos,Bellossom,Marill,Azumarill,Sudowoodo,Politoed,Hoppip,Skiploom,Jumpluff,Aipom,Sunkern,Sunflora,Yanma,Wooper,Quagsire,Espeon,Umbreon,Murkrow,Slowking,Misdreavus,Unown,Wobbuffet,Girafarig,Pineco,Forretress,Dunsparce,Gligar,Steelix,Snubbull,Granbull,Qwilfish,Scizor,Shuckle,Heracross,Sneasel,Teddiursa,Ursaring,Slugma,Magcargo,Swinub,Piloswine,Corsola,Remoraid,Octillery,Delibird,Mantine,Skarmory,Houndour,Houndoom,Kingdra,Phanpy,Donphan,Porygon2,Stantler,Smeargle,Tyrogue,Hitmontop,Smoochum,Elekid,Magby,Miltank,Blissey,Raikou,Entei,Suicune,Larvitar,Pupitar,Tyranitar,Lugia,Ho-Oh,Celebi,Treecko,Grovyle,Sceptile,Torchic,Combusken,Blaziken,Mudkip,Marshtomp,Swampert,Poochyena,Mightyena,Zigzagoon,Linoone,Wurmple,Silcoon,Beautifly,Cascoon,Dustox,Lotad,Lombre,Ludicolo,Seedot,Nuzleaf,Shiftry,Taillow,Swellow,Wingull,Pelipper,Ralts,Kirlia,Gardevoir,Surskit,Masquerain,Shroomish,Breloom,Slakoth,Vigoroth,Slaking,Nincada,Ninjask,Shedinja,Whismur,Loudred,Exploud,Makuhita,Hariyama,Azurill,Nosepass,Skitty,Delcatty,Sableye,Mawile,Aron,Lairon,Aggron,Meditite,Medicham,Electrike,Manectric,Plusle,Minun,Volbeat,Illumise,Roselia,Gulpin,Swalot,Carvanha,Sharpedo,Wailmer,Wailord,Numel,Camerupt,Torkoal,Spoink,Grumpig,Spinda,Trapinch,Vibrava,Flygon,Cacnea,Cacturne,Swablu,Altaria,Zangoose,Seviper,Lunatone,Solrock,Barboach,Whiscash,Corphish,Crawdaunt,Baltoy,Claydol,Lileep,Cradily,Anorith,Armaldo,Feebas,Milotic,Castform,Kecleon,Shuppet,Banette,Duskull,Dusclops,Tropius,Chimecho,Absol,Wynaut,Snorunt,Glalie,Spheal,Sealeo,Walrein,Clamperl,Huntail,Gorebyss,Relicanth,Luvdisc,Bagon,Shelgon,Salamence,Beldum,Metang,Metagross,Regirock,Regice,Registeel,Latias,Latios,Kyogre,Groudon,Rayquaza,Jirachi,Deoxys,Turtwig,Grotle,Torterra,Chimchar,Monferno,Infernape,Piplup,Prinplup,Empoleon,Starly,Staravia,Staraptor,Bidoof,Bibarel,Kricketot,Kricketune,Shinx,Luxio,Luxray,Budew,Roserade,Cranidos,Rampardos,Shieldon,Bastiodon,Burmy,Wormadam,Mothim,Combee,Vespiquen,Pachirisu,Buizel,Floatzel,Cherubi,Cherrim,Shellos,Gastrodon,Ambipom,Drifloon,Drifblim,Buneary,Lopunny,Mismagius,Honchkrow,Glameow,Purugly,Chingling,Stunky,Skuntank,Bronzor,Bronzong,Bonsly,Mime Jr.,Happiny,Chatot,Spiritomb,Gible,Gabite,Garchomp,Munchlax,Riolu,Lucario,Hippopotas,Hippowdon,Skorupi,Drapion,Croagunk,Toxicroak,Carnivine,Finneon,Lumineon,Mantyke,Snover,Abomasnow,Weavile,Magnezone,Lickilicky,Rhyperior,Tangrowth,Electivire,Magmortar,Togekiss,Yanmega,Leafeon,Glaceon,Gliscor,Mamoswine,Porygon-Z,Gallade,Probopass,Dusknoir,Froslass,Rotom,Uxie,Mesprit,Azelf,Dialga,Palkia,Heatran,Regigigas,Giratina,Cresselia,Phione,Manaphy,Darkrai,Shaymin,Arceus,Victini,Snivy,Servine,Serperior,Tepig,Pignite,Emboar,Oshawott,Dewott,Samurott,Patrat,Watchog,Lillipup,Herdier,Stoutland,Purrloin,Liepard,Pansage,Simisage,Pansear,Simisear,Panpour,Simipour,Munna,Musharna,Pidove,Tranquill,Unfezant,Blitzle,Zebstrika,Roggenrola,Boldore,Gigalith,Woobat,Swoobat,Drilbur,Excadrill,Audino,Timburr,Gurdurr,Conkeldurr,Tympole,Palpitoad,Seismitoad,Throh,Sawk,Sewaddle,Swadloon,Leavanny,Venipede,Whirlipede,Scolipede,Cottonee,Whimsicott,Petilil,Lilligant,Basculin,Sandile,Krokorok,Krookodile,Darumaka,Darmanitan,Maractus,Dwebble,Crustle,Scraggy,Scrafty,Sigilyph,Yamask,Cofagrigus,Tirtouga,Carracosta,Archen,Archeops,Trubbish,Garbodor,Zorua,Zoroark,Minccino,Cinccino,Gothita,Gothorita,Gothitelle,Solosis,Duosion,Reuniclus,Ducklett,Swanna,Vanillite,Vanillish,Vanilluxe,Deerling,Sawsbuck,Emolga,Karrablast,Escavalier,Foongus,Amoonguss,Frillish,Jellicent,Alomomola,Joltik,Galvantula,Ferroseed,Ferrothorn,Klang,Klinklang,Tynamo,Eelektrik,Eelektross,Elgyem,Beheeyem,Litwick,Lanturn,Chandelure,Axew,Fraxure,Haxorus,Cubchoo,Beartic,Cryogonal,Shelmet,Accelgor,Stunfisk,Mienfoo,Mienshao,Druddigon,Golett,Golurk,Pawniard,Bisharp,Bouffalant,Rufflet,Braviary,Vullaby,Mandibuzz,Heatmor,Durant,Deino,Zweilous,Hydreigon,Larvesta,Volcarona,Cobalion,Terrakion,Virizion,Tornadus,Thundurus,Reshiram,Zekrom,Landorus,Kyurem,Keldeo,Meloetta,Genesect,Chespin,Quilladin,Chesnaught,Fennekin,Braixen,Delphox,Froakie,Frogadier,Greninja,Bunnelby,Diggersby,Fletchling,Fletchinder,Talonflame,Scatterbug,Spewpa,Vivillon,Litleo,Pyroar,Flabebe,Floette,Florges,Skiddo,Gogoat,Pancham,Pangoro,Furfrou,Espurr,Meowstic,Honedge,Doublade,Aegislash,Spritzee,Aromatisse,Swirlix,Slurpuff,Inkay,Malamar,Binacle,Barbaracle,Skrelp,Dragalge,Clauncher,Clawitzer,Helioptile,Heliolisk,Tyrunt,Tyrantrum,Amaura,Aurorus,Sylveon,Hawlucha,Dedenne,Carbink,Goomy,Sliggoo,Goodra,Klefki,Phantump,Trevenant,Pumpkaboo,Gourgeist,Bergmite,Avalugg,Noibat,Noivern,Xerneas,Yveltal,Zygarde,Diancie,Hoopa,Volcanion,Rowlet,Dartrix,Decidueye,Litten,Torracat,Incineroar,Popplio,Brionne,Primarina,Pikipek,Trumbeak,Toucannon,Yungoos,Gumshoos,Grubbin,Charjabug,Vikavolt,Crabrawler,Crabominable,Oricorio,Cutiefly,Ribombee,Rockruff,Lycanroc,Wishiwashi,Mareanie,Toxapex,Mudbray,Mudsdale,Dewpider,Araquanid,Fomantis,Lurantis,Morelull,Shiinotic,Salandit,Salazzle,Stufful,Bewear,Bounsweet,Steenee,Tsareena,Comfey,Oranguru,Passimian,Wimpod,Golisopod,Sandygast,Palossand,Pyukumuku,Type: Null,Silvally,Minior,Komala,Turtonator,Togedemaru,Mimikyu,Bruxish,Drampa,Dhelmise,Jangmo-o,Hakamo-o,Kommo-o,Tapu Koko,Tapu Lele,Tapu Bulu,Tapu Fini,Cosmog,Cosmoem,Solgaleo,Lunala,Nihilego,Buzzwole,Pheromosa,Xurkitree,Celesteela,Kartana,Guzzlord,Necrozma,Magearna,Marshadow,Poipole,Naganadel,Stakataka,Blacephalon,Zeraora,Meltan,Melmetal,Alolan Rattata,Alolan Raticate,Alolan Raichu,Alolan Sandshrew,Alolan Sandslash,Alolan Vulpix,Alolan Ninetales,Alolan Diglett,Alolan Dugtrio,Alolan Meowth,Alolan Persian,Alolan Geodude,Alolan Graveler,Alolan Golem,Alolan Grimer,Alolan Muk,Alolan Exeggutor,Alolan Marowak"
 messagessent := 0
+gosub, hotkeys
 
 commify(n) {
     if (n <= 99)
@@ -55,7 +70,6 @@ random(x, y) {
 }
 
 showgui(w,h,s) {
-    gosub, updateini
     gui, show, center y0 w%w% h%h%, %s%
     WinGetActiveStats, s, gw, gh, gx, gy
     mousemove, % gw*0.5, % gh*0.5, 8
@@ -74,8 +88,9 @@ optionsmenu:
     gui, destroy
     gui, add, button, gsaveandexit x0 y0 w160 h20 , exit
     gui, add, button, greload x0 y20 w160 h30 , reload
-    gui, add, button, gshowstats x170 y0 w70 h120 default , stats
-    gui, add, button, gbalance x240 y0 w50 h120 , balance
+    gui, add, button, gshowstats x170 y0 w40 h120 default , stats
+    gui, add, button, ghotkeysmenu x210 y0 w50 h120, hotkeys
+    gui, add, button, gbalance x260 y0 w30 h120 , bal
     gui, add, button, gdaily x290 y0 w30 h120 , daily
     gui, add, button, gsave x0 y60 w80 h20 , set prefix
     gui, add, edit, vprefix x80 y60 w80 h20 , %prefix%
@@ -141,6 +156,48 @@ marketmenu:
     showgui(370,160,"Better Pokecord - Market")
     return
 
+hotkeysmenu:
+    gui, destroy
+    gui, add, text, x10 y0 w120 h20 center border, gui windows
+    gui, add, text, x140 y0 w120 h20 center border, my pokemon
+    gui, add, text, x270 y0 w120 h20 center border, market
+    gui, add, text, x400 y0 w120 h20 center border, spam
+    gui, add, text, x10 y50 w70 h20 center, options menu
+    gui, add, text, x10 y100 w70 h20 center, shop menu
+    gui, add, text, x10 y150 w70 h20 center, market menu
+    gui, add, text, x140 y30 w70 h20 center, catch
+    gui, add, text, x140 y80 w70 h20 center, set pokemon
+    gui, add, text, x140 y130 w70 h20 center, latest catch
+    gui, add, text, x140 y180 w70 h20 center, check species
+    gui, add, text, x270 y30 w70 h20 center, search iv
+    gui, add, text, x270 y60 w70 h20 center, search price
+    gui, add, text, x270 y90 w70 h20 center, sell
+    gui, add, text, x270 y120 w70 h20 center, trade
+    gui, add, text, x270 y150 w70 h20 center, buy
+    gui, add, text, x270 y180 w70 h20 center, info
+    gui, add, text, x400 y50 w70 h20 center, numerical
+    gui, add, text, x400 y100 w70 h20 center, generator
+    gui, add, text, x400 y150 w70 h20 center, pause
+    gui, add, hotkey, vhoptions x80 y50 w50 h20 , %hoptions%
+    gui, add, hotkey, vhshop x80 y100 w50 h20 , %hshop%
+    gui, add, hotkey, vhmarket x80 y150 w50 h20 , %hmarket%
+    gui, add, hotkey, vhcatch x210 y30 w50 h20 , %hcatch%
+    gui, add, hotkey, vhset x210 y80 w50 h20 , %hset%
+    gui, add, hotkey, vhlatest x210 y130 w50 h20 , %hlatest%
+    gui, add, hotkey, vhspecies x210 y180 w50 h20 , %hspecies%
+    gui, add, hotkey, vhsearchiv x340 y30 w50 h20 , %hsearchiv%
+    gui, add, hotkey, vhsearchprice x340 y60 w50 h20 , %hsearchprice%
+    gui, add, hotkey, vhquicksell x340 y90 w50 h20 , %hquicksell%
+    gui, add, hotkey, vhtrade x340 y120 w50 h20 , %htrade%
+    gui, add, hotkey, vhquickbuy x340 y150 w50 h20 , %hquickbuy%
+    gui, add, hotkey, vhinfo x340 y180 w50 h20 , %hinfo%
+    gui, add, hotkey, vhnumerical x470 y50 w50 h20 , %hnumerical%
+    gui, add, hotkey, vhgenerator x470 y100 w50 h20 , %hgenerator%
+    gui, add, hotkey, vhpause x470 y150 w50 h20 , %hpause%
+    gui, add, button, gupdatehotkeys x10 y210 w510 h30 , submit
+    showgui(530,250,"Better Pokecord - Hotkeys")
+return
+
 save:
     gui, submit
     prefcheck := strsplit(prefix)
@@ -171,6 +228,12 @@ daily:
 reload:
     gosub, updateini
     reload
+    return
+
+updatehotkeys:
+    gui, submit
+    gosub, hotkeys
+    gosub, optionsmenu
     return
 
 buystone:
@@ -525,6 +588,22 @@ updateini:
     iniwrite, %prefix%, settings.ini, system, prefix
     iniwrite, %mininterval%, settings.ini, system, spam_msg_interval_min
     iniwrite, %maxinterval%, settings.ini, system, spam_msg_interval_max
+    iniwrite, %hoptions%, settings.ini, system, options
+    iniwrite, %hshop%, settings.ini, system, shop
+    iniwrite, %hmarket%, settings.ini, system, market
+    iniwrite, %hcatch%, settings.ini, system, catch
+    iniwrite, %hset%, settings.ini, system, set
+    iniwrite, %hlatest%, settings.ini, system, latest
+    iniwrite, %hspecies%, settings.ini, system, species
+    iniwrite, %hsearchiv%, settings.ini, system, searchiv
+    iniwrite, %hsearchprice%, settings.ini, system, searchprice
+    iniwrite, %hquicksell%, settings.ini, system, quicksell
+    iniwrite, %htrade%, settings.ini, system, trade
+    iniwrite, %hquickbuy%, settings.ini, system, quickbuy
+    iniwrite, %hinfo%, settings.ini, system, info
+    iniwrite, %hnumerical%, settings.ini, system, numerical
+    iniwrite, %hgenerator%, settings.ini, system, generator
+    iniwrite, %hpause%, settings.ini, system, pause
     iniwrite, %bootcount%, settings.ini, stats, boot_count
     iniwrite, %totalmessagessent%, settings.ini, stats, total_messages_sent
     iniwrite, %vpokemon%, settings.ini, stats, pokemon
@@ -548,34 +627,41 @@ saveandexit:
     gosub, updateini
     exitapp
 
+hotkeys:
+    hotkey, ifwinactive, Better Pokecord - Options
+    hotkey, %hshop%, shopmenu
+    hotkey, %hmarket%, marketmenu
+    hotkey, ifwinactive, Better Pokecord - Shop
+    hotkey, %hoptions%, optionsmenu
+    hotkey, %hmarket%, marketmenu
+    hotkey, ifwinactive, Better Pokecord - Market
+    hotkey, %hoptions%, optionsmenu
+    hotkey, %hshop%, shopmenu
+    hotkey, ifwinactive, Discord
+    hotkey, %hoptions%, optionsmenu
+    hotkey, %hshop%, shopmenu
+    hotkey, %hmarket%, marketmenu
+    hotkey, %hcatch%, catchpokemon
+    hotkey, %hset%, setpokemon
+    hotkey, %hlatest%, latestcatch
+    hotkey, %hspecies%, checkspecies
+    hotkey, %hsearchiv%, searchiv
+    hotkey, %hsearchprice%, searchprice
+    hotkey, %hquicksell%, marketsell
+    hotkey, %htrade%, trade
+    hotkey, %hquickbuy%, marketbuy
+    hotkey, %hinfo%, marketinfo
+    hotkey, %hnumerical%, spamnum
+    hotkey, %hgenerator%, spamspawn
+    hotkey, %hpause%, pause
+    return
+
+pause:
+    pause
+    return
+
 end::suspend
 ^end::exit
 +end::
     gosub, reload
     return
-
-#ifwinactive, Discord
-^down::gosub, optionsmenu
-^left::gosub, shopmenu
-^right::gosub, marketmenu
-
-+enter::gosub, catchpokemon
-+\::gosub, setpokemon
-numlock::gosub, latestcatch
-home::gosub, checkspecies
-
-numpaddiv::gosub, searchiv
-numpadmult::gosub, searchprice
-numpadsub::gosub, marketsell
-^numpadsub::gosub, trade
-numpadadd::gosub, marketbuy
-^numpadadd::gosub, marketinfo
-
-![::gosub, spamnum
-^[::gosub, spamspawn
-[::pause
-
-#ifwinactive, Better Pokecord
-^down::gosub, optionsmenu
-^left::gosub, shopmenu
-^right::gosub, marketmenu
