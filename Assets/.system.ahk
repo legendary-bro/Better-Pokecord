@@ -45,6 +45,11 @@ gosub, hotkeys
 
 return
 
+reload:
+    gosub, updateini
+    reload
+    return
+
 showstats:
     cbootcount := commify(bootcount)
     cmessagessent := commify(messagessent)

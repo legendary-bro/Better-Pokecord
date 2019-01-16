@@ -85,11 +85,6 @@ daily:
     gosub, optionsmenu
     return
 
-reload:
-    gosub, updateini
-    reload
-    return
-
 hotkeysupdate:
     gui, submit
     gosub, hotkeys
