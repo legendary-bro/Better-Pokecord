@@ -1,8 +1,8 @@
 # Better Pokecord
 
-An ahk script designed to spawn pokemon in addition to make catching/interacting with the market easier, and in general cut down on the amount of typing Pokecord requires.
+An ahk script designed to cut down on the amount of typing Pokecord requires. Features include visual menus for the shop and market. Macros to help you catch, sell, trade and buy Pokemon. And macros to spam messages to level or spawn Pokemon.
 
-This isn't a self bot and its not gonna auto catch stuff for you. You have other options aside from this if that's what you're after. I designed this with the intent of still being able to use Discord as I normally do. I just wanted to make the catching, spawning, inventory, market commands etc less typing intensive if I was interacting with Pokecord. I'm learning the ahk language in my free time and just uploading my work to GitHub. If you use it, great, if you think its shit, great, if you wanna help out with the project, fantastic, send me a pull request.
+__*This isn't a self bot and its not going to auto catch stuff for you.*__ You have other options aside from this if that's what you're after. I designed this with the intent of still being able to use Discord as I normally do. I just wanted to make the commands etc less typing intensive if I was interacting with Pokecord. I'm learning the ahk language in my free time and just uploading my work to GitHub. If you use it, great, if you think its shit, great, if you wanna help out with the project, fantastic, send me a pull request.
 
 ## Table of Contents
 
@@ -66,7 +66,7 @@ This isn't a self bot and its not gonna auto catch stuff for you. You have other
 
 ### 0.1 Features
 
-* GUI support
+* GUI support for shop, market and others
 * Macro's to sell or buy pokemon in bulk
 * Navigating the market is less time consuming
 * Assisted catch and inventory macro's
@@ -94,11 +94,11 @@ If you want to contact me on Discord you can do so by sending a friend request t
 
 ### 0.5 Use this script at your own risk
 
-I’ve been using scripts on Pokecord for some time and while the risk is not at self bot levels & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
+Pokecord is fairly clear about its stance on the usage of macro tools on the start message when you begin to play. I’ve been using scripts on Pokecord for some time and while I dont think the risk is high while using this & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
 
 ## 1.0 GUI controls
 
-All 3 menus will open when pressing the ctrl key + an arrow key while Discord is the active window.
+All 3 menus will open when pressing the ctrl key + an arrow key _**while Discord is the active window.**_
 
 * Ctrl+Down: Options menu
 * Ctrl+Left: Shop menu
@@ -148,11 +148,19 @@ I dont think anything about this menu needs to be explained in detail. You click
 
 ![Market menu](https://i.imgur.com/zejLXts.png)
 
-I think this section is for the most part self explanitory as well. I will say that setting anything to "--" will tell the script not to include it in the market search. But beyond that I think people understand what to do here.
+Setting anything to "--" will tell the script not to include it in the market search.
 
 #### Reset buttons
 
-your last selections are saved each time you run a search, the two reset buttons will reset everything back to a "--" state in their respective sections.
+your last selections are saved each time you run a search, the two reset buttons will reset everything back to a "--" or default state in their respective sections.
+
+#### IV filtering
+
+![Market search](https://i.imgur.com/0gy1jnb.png)
+
+When filtering by IV's you can include > or < in the value.
+
+![Market Results](https://i.imgur.com/6deGFzd.png)
 
 ## 2.0 Hotkey Controls
 
@@ -165,7 +173,7 @@ All of the hotkeys (with the exception of the hotkeys explained in sections 2.1-
 The ctrl and “end” key on your keyboard. Will close the script.
 Additionally, you can right click on the icon that appears in the system tray and simply choose “Exit”. This hotkey is always assigned no matter the active window.
 
-![exitscript]
+![exitscript](https://i.imgur.com/OhnvrId.png)
 
 ### 2.2 Reloading the script
 
@@ -251,19 +259,19 @@ The multiply key on the NumPad(*). Will do a market search for the PV and priori
 
 The subtract key on the NumPad(-). Used to quickly list multiple or single Pokemon on the market. This macro is limited to listing things 10 at a time, as the first listing commands begin to time out sometime around the 11th listing. You can highlight more than 10 Pokemon, there is no need to carefully count them if you dont want to, but only the first 10, starting from the top of the list will be put to market.
 
-![marketsell1]
+![marketsell1](https://i.imgur.com/Y0kLzG8.png)
 
 As you can see, I have 14 Gastly’s. I do want this many and listing them all will take quite some time. Let's say I only want to list the ones under 50IV. So here's what I do.
 
-![marketsell2]
+![marketsell2](https://i.imgur.com/KIexHoh.png)
 
 I’ve highlighted everything I wish to sell and now press the NumPadSubtract button. The highlighted text is copied to the clipboard and I'm then presented with an input prompt asking me how much I would like to list each one for.
 
-![marketsell3]
+![marketsell3](https://i.imgur.com/gwu5of0.png)
 
 Because I already used the NumPadMultiply button mentioned previously, I can see the lowest price for Gastly’s is currently 1 credit. I unfortunately cannot undercut anyone's prices and will just have to list them all for a single credit. I enter 1 in the prompt and click “ok” or press the enter button. The script will then begin to list everything I had highlighted earlier before then sending the “confirmlist” command.
 
-![marketsell4]
+![marketsell4](https://i.imgur.com/HpTu66U.png)
 
 If you are going to list something for a value that contains commas the value you enter into the prompt should not contain those commas. (1000 not 1,000)
 
@@ -273,11 +281,11 @@ If you are going to list something for a value that contains commas the value yo
 
 The add key on the numpad (+). Functions in an almost identical manner as what is mentioned above, but instead of selling, it will buy multiple pokemon from the market. You can buy a whole page (20 Pokemon) using this command if you want, it is not limited to 10.
 
-![marketbuy1]
+![marketbuy1](https://i.imgur.com/P8DglVm.png)
 
 Looks like I’ll be able to resell these for a little bit of profit.
 
-![marketbuy2]
+![marketbuy2](https://i.imgur.com/D21THXU.png)
 
 ### 4.5 Get multiple market infos
 
@@ -293,9 +301,7 @@ Used in the same way as the other market commands but this will add multiple pok
 
 ## 5.0 Message Spam
 
-There are two different ways to spam, both will be explained in section 5.1.
-
-I must stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this publicly.
+I stress that you should first test, and then use this in a private server. I accept no responsibility for whatever situation you may find yourself in because you used this publicly.
 
 ### 5.1 Starting spam
 
@@ -305,7 +311,7 @@ I must stress that you should first test, and then use this in a private server.
 
 You will be presented with an input prompt asking you how many messages you would like to send. The value you enter should not contain any commas. Upon clicking “Ok” or pressing the Enter key the script will start sending messages in a numerical order with the intent to spawn pokemon.
 
-![messagespam1] - In this case I've entered the number 13 into the prompt.
+![messagespam1](https://i.imgur.com/1a9JxX6.png) - In this case I've entered the number 13 into the prompt.
 
 Messages are sent at random intervals based on the setting in the .ini file, which is measured in milliseconds. By default it is set to “500,1000”. This means it will wait at least half a second but no longer than 1 second before sending another message.  It will continue to send messages until a pause key is pressed, or it reaches the number of messages it was assigned in the input prompt.
 
@@ -313,27 +319,10 @@ Messages are sent at random intervals based on the setting in the .ini file, whi
 
 Functions the exact same way as the numerical spammer, except instead of numbers it will generate a random pokemon.
 
-![messagespam2] - In this case I've entered the number 3 into the prompt.
+![messagespam2](https://i.imgur.com/nKdyyQq.png) - In this case I've entered the number 3 into the prompt.
 
 ### 5.2 Pausing or canceling spam
 
 #### [
 
 Will pause or unpause the counting messages after they have begun. To cancel the spam completely you will need to reload, or exit the script.
-
-[guipreview]: https://i.imgur.com/Htxd7a4.png
-[prefixdefault]: https://i.imgur.com/zyJauc6.png
-[prefixexample1]: https://i.imgur.com/SRrPycu.png
-[prefixexample2]: https://i.imgur.com/9BuWVuQ.png
-[prefixexample3]: https://i.imgur.com/HxBTJn2.png
-[prefixexample4]: https://i.imgur.com/XYa8NbM.png
-[spamcooldown]: https://i.imgur.com/oB6lc7u.png
-[exitscript]: https://i.imgur.com/OhnvrId.png
-[marketsell1]: https://i.imgur.com/Y0kLzG8.png
-[marketsell2]: https://i.imgur.com/KIexHoh.png
-[marketsell3]: https://i.imgur.com/gwu5of0.png
-[marketsell4]: https://i.imgur.com/HpTu66U.png
-[marketbuy1]: https://i.imgur.com/P8DglVm.png
-[marketbuy2]: https://i.imgur.com/D21THXU.png
-[messagespam1]: https://i.imgur.com/1a9JxX6.png
-[messagespam2]: https://i.imgur.com/nKdyyQq.png
