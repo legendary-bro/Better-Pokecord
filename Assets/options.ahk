@@ -53,8 +53,9 @@ hotkeysmenu:
     gui, add, hotkey, vhnumerical x470 y50 w50 h20 , %hnumerical%
     gui, add, hotkey, vhgenerator x470 y100 w50 h20 , %hgenerator%
     gui, add, hotkey, vhpause x470 y150 w50 h20 , %hpause%
-    gui, add, button, gupdatehotkeys x10 y210 w510 h30 , submit
-    showgui(530,250,"Better Pokecord - Hotkeys")
+    gui, add, button, ghotkeysupdate x10 y210 w510 h30 , submit
+    gui, add, button, ghotkeysreset x10 y240 w510 h20, reset
+    showgui(530,270,"Better Pokecord - Hotkeys")
 return
 
 save:
@@ -89,9 +90,29 @@ reload:
     reload
     return
 
-updatehotkeys:
+hotkeysupdate:
     gui, submit
     gosub, hotkeys
     gosub, optionsmenu
     return
-    
+
+hotkeysreset:
+    hoptions:="^Down"
+    hshop:="^Left"
+    hmarket:="^Right"
+    hcatch:="+Enter"
+    hset:="+\"
+    hlatest:="Numlock"
+    hspecies:="Home"
+    hsearchiv:="NumpadDiv"
+    hsearchprice:="NumpadMult"
+    hquicksell:="NumpadSub"
+    htrade:="^NumpadSub"
+    hquickbuy:="NumpadAdd"
+    hinfo:="^NumpadAdd"
+    hnumerical:="!["
+    hgenerator:="^["
+    hpause:="["
+    gosub, hotkeys
+    gosub, hotkeysmenu
+    return
