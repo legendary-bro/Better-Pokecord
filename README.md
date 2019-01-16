@@ -164,6 +164,10 @@ When filtering by IV's you can include > or < in the value.
 
 ## 2.0 Hotkey Controls
 
+![Hotkey controls](https://i.imgur.com/ZW94X9V.png)
+
+The hotkeys menu will allow you to change key bindings from their defaults as described below to a new combination.
+
 All of the hotkeys (with the exception of the hotkeys explained in sections 2.1-2.3) will not work unless Discord is the active window. This allows you to use the keys for other tasks outside of Discord, without the fear of having the script take off running on you for accidentally pressing one of the hotkeys.
 
 ### 2.1 Exiting the script
