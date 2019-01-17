@@ -291,11 +291,11 @@ Looks like I’ll be able to resell these for a little bit of profit.
 
 ![marketbuy2](https://i.imgur.com/D21THXU.png)
 
-### 4.5 Get multiple market infos
+### 4.5 Get multiple infos
 
 #### Ctrl+NumPadAdd
 
-Used in the same way as the above two examples, but it will show you the detailed info for pokemon on the market.
+Used in the same way as the above two examples, but it will show you the detailed info for pokemon either in your inventory or on the market.
 
 ### 4.6 Quick trade
 
