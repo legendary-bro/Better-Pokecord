@@ -32,6 +32,7 @@ marketmenu:
 marketsearch:
     gui, submit
     sleepwin("Discord",20)
+    setkeydelay, 40
     marketsearch := prefix "market search"
     if (vpokemon != "--")
         marketsearch := marketsearch . " --name " vpokemon
