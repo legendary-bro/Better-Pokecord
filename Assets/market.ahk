@@ -25,15 +25,27 @@ marketmenu:
     gui, add, dropdownlist, x140 y120 w150 h20 r20 vmarkettype, %markettype%||bug|dark|dragon|electric|fairy|fighting|fire|flying|ghost|grass|ground|ice|normal|poison|psychic|rock|steel|water
     gui, add, checkbox, x140 y140 w70 h20 center checked%marketshiny% vmarketshiny, shiny
     gui, add, checkbox, x210 y140 w80 h20 center checked%marketshowiv% vmarketshowiv, show iv
-    gui, add, button, x300 y0 w70 h160 default gmarketsearch, search
-    showgui(370,160,"Better Pokecord - Market")
+    gui, add, button, x300 y0 w50 h160 gmarketsearch, market
+    gui, add, button, x350 y0 w60 h160 ginventorysearch, inventory
+    showgui(410,160,"Better Pokecord - Search")
     return
 
 marketsearch:
+    ismarketsearch := 1
+    gosub, inventorysearch
+    return
+
+inventorysearch:
     gui, submit
     sleepwin("Discord",20)
+    marketsearch := prefix "pokemon"
+    if (ismarketsearch = 1)
+        marketsearch := prefix "market search"
     setkeydelay, 40
-    marketsearch := prefix "market search"
+    gosub, searchlogic
+    return
+
+searchlogic:
     if (vpokemon != "--")
         marketsearch := marketsearch . " --name " vpokemon
     if (marketshiny = 1)
@@ -42,8 +54,6 @@ marketsearch:
         marketsearch := marketsearch . " --level " marketlevel
     if (markettype != "type")
         marketsearch := marketsearch . " --type " markettype
-    if (marketprice != "--")
-        marketsearch := marketsearch . " --price " marketprice
     if (markethpiv != "--")
         marketsearch := marketsearch . " --hpiv " markethpiv
     if (marketatkiv != "--")
@@ -56,10 +66,15 @@ marketsearch:
         marketsearch := marketsearch . " --spdefiv " marketsdefiv
     if (marketspdiv != "--")
         marketsearch := marketsearch . " --speediv " marketspdiv
-    if (marketorder != "order")
-        marketsearch := marketsearch . " --order " marketorder
-    if (marketshowiv = 1)
-        marketsearch := marketsearch . " --showiv"
+    if (ismarketsearch = 1) {
+        if (marketprice != "--")
+            marketsearch := marketsearch . " --price " marketprice
+        if (marketorder != "order")
+            marketsearch := marketsearch . " --order " marketorder
+        if (marketshowiv = 1)
+                marketsearch := marketsearch . " --showiv"
+        ismarketsearch := 0
+    }
     send % marketsearch "`r"
     gosub, msgcount
     gosub, marketmenu
