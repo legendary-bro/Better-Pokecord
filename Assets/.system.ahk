@@ -17,6 +17,7 @@ iniread, hquickbuy, settings.ini, system, quickbuy
 iniread, hinfo, settings.ini, system, info
 iniread, hnumerical, settings.ini, system, numerical
 iniread, hgenerator, settings.ini, system, generator
+iniread, hscrambled, settings.ini, system, scrambled
 iniread, hpause, settings.ini, system, pause
 iniread, bootcount, settings.ini, stats, boot_count
 iniread, totalmessagessent, settings.ini, stats, total_messages_sent
@@ -51,23 +52,6 @@ reload:
     reload
     return
 
-showstats:
-    cbootcount := commify(bootcount)
-    cmessagessent := commify(messagessent)
-    ctotalmessagessent := commify(totalmessagessent)
-    cpokemoncaught := commify(pokemoncaught)
-    msgbox,, Better Pokecord - Stats,
-    (ltrim
-        total boots : %cbootcount%
-        messages sent : %cmessagessent%
-        total messages sent : %ctotalmessagessent%
-
-        pokemon caught : %cpokemoncaught%
-        selected pokemon : %vpokemon%
-        most recent catch : %lastpokemoncaught%
-    )
-    return
-
 msgcount:
     totalmessagessent += 1
     messagessent += 1
@@ -93,6 +77,7 @@ updateini:
     iniwrite, %hinfo%, settings.ini, system, info
     iniwrite, %hnumerical%, settings.ini, system, numerical
     iniwrite, %hgenerator%, settings.ini, system, generator
+    iniwrite, %hscrambled%, settings.ini, system, scrambled
     iniwrite, %hpause%, settings.ini, system, pause
     iniwrite, %bootcount%, settings.ini, stats, boot_count
     iniwrite, %totalmessagessent%, settings.ini, stats, total_messages_sent

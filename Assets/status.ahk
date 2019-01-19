@@ -1,25 +1,25 @@
 statusmenu:
     gui, destroy
-    Gui, Add, Text, x10 y0 w160 h20 center border, selected pokemon
-    Gui, Add, Text, x10 y40 w160 h20 center, % vpokemon
-    Gui, Add, Button, x10 y80 w160 h30 gcheckspecies,  % "show owned " vpokemon "'s"
-    Gui, Add, Button, x10 y130 w160 h30 gsearchiv, search high iv
-    Gui, Add, Button, x10 y180 w160 h30 gsearchprice, search low price
-    Gui, Add, Text, x200 y0 w160 h20 center border, stats
-    Gui, Add, Text, x200 y30 w160 h20 center, % "total boots : " commify(bootcount)
-    Gui, Add, Text, x200 y60 w160 h20 center, % "messages sent : " commify(messagessent)
-    Gui, Add, Text, x200 y90 w160 h20 center, % "total messages sent : " commify(totalmessagessent)
-    Gui, Add, Text, x200 y130 w160 h20 center, % "pokemon caught : " commify(pokemoncaught)
-    Gui, Add, Text, x200 y160 w160 h20 center, % "latest catch : " lastpokemoncaught
-    Gui, Add, Button, x190 y190 w170 h20 glatestcatch, info latest
-    Gui, Add, Text, x390 y0 w160 h20 border center, highlighted text
-    Gui, Add, Button, x390 y30 w80 h70 gmarketinfo, info
-    Gui, Add, Button, x470 y30 w80 h70 gtrade, trade
-    Gui, Add, Button, x390 y100 w80 h70 gmarketsell, quick sell
-    Gui, Add, Button, x470 y100 w80 h70 gmarketbuy, quick buy
-    Gui, Add, Button, x390 y180 w160 h30 gnicknames, set nicknames
+    gui, add, text, x10 y0 w160 h20 center border, selected pokemon
+    gui, add, text, x10 y40 w160 h20 center, % vpokemon
+    gui, add, button, x10 y80 w160 h30 gcheckspecies,  % "show owned " vpokemon "'s"
+    gui, add, button, x10 y130 w160 h30 gsearchiv, search high iv
+    gui, add, button, x10 y180 w160 h30 gsearchprice, search low price
+    gui, add, text, x200 y0 w160 h20 center border, stats
+    gui, add, text, x200 y30 w160 h20 center, % "total boots : " commify(bootcount)
+    gui, add, text, x200 y60 w160 h20 center, % "messages sent : " commify(messagessent)
+    gui, add, text, x200 y90 w160 h20 center, % "total messages sent : " commify(totalmessagessent)
+    gui, add, text, x200 y130 w160 h20 center, % "pokemon caught : " commify(pokemoncaught)
+    gui, add, text, x200 y160 w160 h20 center, % "latest catch : " lastpokemoncaught
+    gui, add, button, x190 y190 w170 h20 glatestcatch, info latest
+    gui, add, text, x390 y0 w160 h20 border center, highlighted text
+    gui, add, button, x390 y30 w80 h70 gmarketinfo, info
+    gui, add, button, x470 y30 w80 h70 gtrade, trade
+    gui, add, button, x390 y100 w80 h70 gmarketsell, quick sell
+    gui, add, button, x470 y100 w80 h70 gmarketbuy, quick buy
+    gui, add, button, x390 y180 w160 h30 gnicknames, set nicknames
     showgui(560,220,"Better Pokecord - Status")
-    Return
+    return
 
 nicknames:
     msgbox, % "being worked on"
@@ -151,4 +151,3 @@ marketbuy:
     }
     loopcount := 0
     return
-    

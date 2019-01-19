@@ -33,69 +33,6 @@ setpokemon:
     }
     return
 
-spamnum:
-    inputbox, totalmessages, how many messages to send?
-    if (errorlevel = 1)
-        return
-    sleepwin("Discord",20)
-    while a_index <= totalmessages {
-        clipboard := "``" commify(a_index) "/" commify(totalmessages) " (" percentage(a_index,totalmessages) ")``"
-        send, ^v `r
-        gosub, msgcount
-        sleep, random(mininterval, maxinterval)
-    }
-    return
-
-spamspawn:
-    inputbox, totalpokemon, how many pokemon to spawn?
-    if (errorlevel = 1)
-        return
-    sleepwin("Discord",20)
-    vpokemonarray := ["Pidegot","Kabuto","Mew","Porygon","Klink"]
-    loop, parse, pokemonlist, csv
-    {
-        vpokemonarray.push(a_loopfield)
-    }
-    natures := ["Adamant","Bashful","Bold","Brave","Calm","Careful","Docile","Gentile","Hardy","Hasty","Impish","Jolly","Lax","Loneley","Mild","Modest","Naive","Naughty","Quiet","Quirky","Rash","Relaxed","Sassy","Serious","Timid"]
-    while a_index <= totalpokemon {
-        random, level  , 1, 90
-        random, hpiv   , 1, 31
-        random, atkiv  , 1, 31
-        random, defiv  , 1, 31
-        random, satkiv , 1, 31
-        random, sdefiv , 1, 31
-        random, spiv   , 1, 31
-        random, isshiny, 1, 4096
-        spawnedpokemon := vpokemonarray[random(1, vpokemonarray.maxindex())]
-        spawnednature := natures[random(1, natures.maxindex())]
-        totaliv := percentage((hpiv+atkiv+defiv+satkiv+sdefiv+spiv),186)
-        totalcount := "# " commify(a_index) "/" commify(totalpokemon) " (" percentage(a_index,totalpokemon) ")"
-        clipboard =
-        (ltrim
-            ``````cs
-            %totalcount%
-            level   : %level%
-            pokemon : %spawnedpokemon%
-            total iv: %totaliv%
-            nature  : %spawnednature%
-
-            hp      : %hpiv%/31
-            atk     : %atkiv%/31
-            def     : %defiv%/31
-            satk    : %satkiv%/31
-            sdef    : %sdefiv%/31
-            spd     : %spiv%/31``````
-        )
-        send, ^v `r
-        gosub, msgcount
-        if (isshiny = 1) {
-            send, :star2:shiny:star2:`r
-            gosub, msgcount
-        }
-        sleep, random(mininterval,maxinterval)
-    }
-    return
-
 hotkeys:
     hotkey, ifwinactive, Better Pokecord - Options
     hotkey, %hstatus%, statusmenu
@@ -130,6 +67,7 @@ hotkeys:
     hotkey, %hinfo%, marketinfo
     hotkey, %hnumerical%, spamnum
     hotkey, %hgenerator%, spamspawn
+    hotkey, %hscrambled%, spamscrambled
     hotkey, %hpause%, pause
     return
 
