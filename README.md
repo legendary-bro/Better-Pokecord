@@ -78,7 +78,7 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 * Assisted catch and inventory macro's
 * Script to spam messages to level and spawn pokemon
 
-![status menu](https://i.imgur.com/rDmC6Ys.png) ![search menu](https://i.imgur.com/bCuS1me.png)
+![search menu](https://i.imgur.com/bCuS1me.png) ![status menu](https://i.imgur.com/rDmC6Ys.png)
 
 ![Shop menu](https://i.imgur.com/GkKN7GK.png) ![options menu](https://i.imgur.com/yfdHVKK.png)
 
