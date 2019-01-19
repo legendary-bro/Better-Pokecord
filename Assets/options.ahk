@@ -21,9 +21,10 @@ hotkeysmenu:
     gui, add, text, x140 y0 w120 h20 center border, my pokemon
     gui, add, text, x270 y0 w120 h20 center border, market
     gui, add, text, x400 y0 w120 h20 center border, spam
-    gui, add, text, x10 y50 w70 h20 center, options menu
-    gui, add, text, x10 y100 w70 h20 center, shop menu
-    gui, add, text, x10 y150 w70 h20 center, market menu
+    gui, add, text, x10 y30 w70 h20 center, options menu
+    gui, add, text, x10 y80 w70 h20 center, status menu
+    gui, add, text, x10 y130 w70 h20 center, shop menu
+    gui, add, text, x10 y180 w70 h20 center, search menu
     gui, add, text, x140 y30 w70 h20 center, catch
     gui, add, text, x140 y80 w70 h20 center, set pokemon
     gui, add, text, x140 y130 w70 h20 center, latest catch
@@ -37,9 +38,10 @@ hotkeysmenu:
     gui, add, text, x400 y50 w70 h20 center, numerical
     gui, add, text, x400 y100 w70 h20 center, generator
     gui, add, text, x400 y150 w70 h20 center, pause
-    gui, add, hotkey, vhoptions x80 y50 w50 h20 , %hoptions%
-    gui, add, hotkey, vhshop x80 y100 w50 h20 , %hshop%
-    gui, add, hotkey, vhmarket x80 y150 w50 h20 , %hmarket%
+    gui, add, hotkey, vhoptions x80 y30 w50 h20 , %hoptions%
+    gui, add, hotkey, vhstatus x80 y80 w50 h20 , %hstatus%
+    gui, add, hotkey, vhshop x80 y130 w50 h20 , %hshop%
+    gui, add, hotkey, vhmarket x80 y180 w50 h20 , %hmarket%
     gui, add, hotkey, vhcatch x210 y30 w50 h20 , %hcatch%
     gui, add, hotkey, vhset x210 y80 w50 h20 , %hset%
     gui, add, hotkey, vhlatest x210 y130 w50 h20 , %hlatest%

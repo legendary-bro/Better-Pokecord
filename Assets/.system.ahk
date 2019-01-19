@@ -2,6 +2,7 @@ iniread, prefix, settings.ini, system, prefix
 iniread, mininterval, settings.ini, system, spam_msg_interval_min
 iniread, maxinterval, settings.ini, system, spam_msg_interval_max
 iniread, hoptions, settings.ini, system, options
+iniread, hstatus, settings.ini, system, status
 iniread, hshop, settings.ini, system, shop
 iniread, hmarket, settings.ini, system, market
 iniread, hcatch, settings.ini, system, catch
@@ -77,6 +78,7 @@ updateini:
     iniwrite, %mininterval%, settings.ini, system, spam_msg_interval_min
     iniwrite, %maxinterval%, settings.ini, system, spam_msg_interval_max
     iniwrite, %hoptions%, settings.ini, system, options
+    iniwrite, %hstatus%, settings.ini, system, status
     iniwrite, %hshop%, settings.ini, system, shop
     iniwrite, %hmarket%, settings.ini, system, market
     iniwrite, %hcatch%, settings.ini, system, catch
