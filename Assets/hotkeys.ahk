@@ -50,6 +50,11 @@ hotkeys:
     hotkey, %hoptions%, optionsmenu
     hotkey, %hstatus%, statusmenu
     hotkey, %hshop%, shopmenu
+    hotkey, ifwinactive, Better Pokecord - Spam
+    hotkey, %hoptions%, optionsmenu
+    hotkey, %hstatus%, statusmenu
+    hotkey, %hshop%, shopmenu
+    hotkey, %hmarket%, marketmenu
     hotkey, ifwinactive, Discord
     hotkey, %hoptions%, optionsmenu
     hotkey, %hstatus%, statusmenu
