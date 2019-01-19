@@ -338,3 +338,19 @@ Allows you to buy items from Pokecords store.
 I dont think anything about this menu needs to be explained in detail. You click buy and it spends the amount on the button and buys your item.
 
 ## 5.0 Search Menu
+
+![search menu](https://i.imgur.com/bCuS1me.png)
+
+Setting anything to "--" will tell the script not to include it in the search. 
+
+### 5.1 Reset buttons
+
+Your last selections are saved each time you run a search, the two reset buttons will reset everything back to a "--" or default state in their respective sections.
+
+### 5.2 IV filtering
+
+![Market search](https://i.imgur.com/39EG7fA.png)
+
+When filtering by IV's you can include > or < in the value.
+
+![Market Results](https://i.imgur.com/uE5qnzi.png)
