@@ -100,7 +100,7 @@ Pokecord is fairly clear about its stance on the usage of macro tools on its sta
 
 You can use most of the tools Better Pokecord comes with through the visual menus, or assign some of them to hotkeys for faster access. I will provide the default hotkeys of anything that can be given a hotkey, but they can all be changed to user prefference in a later menu. There are a few that cant be changed or are only availabe as hotkeys though which I would like to cover before jumping into menu controls.
 
-All of the hotkeys (with the exception of the hotkeys explained in sections 1.1-1.3) **will not work unless Discord is the active window**. This allows you to use the keys for other tasks outside of Discord, without the fear of having the script take off running on you for accidentally pressing one of the hotkeys.
+All of the hotkeys (with the exception of the hotkeys explained in sections 1.1-1.3) **will not work unless Discord is the active window**. This allows you to use the keys for other tasks outside of Discord, without the fear of having the script take off running on you for accidentally pressing one of the hotkeys. Shiny pokemon are also not currently supported in tools that make use of highlighted text.
 
 ### 1.1 Exiting the script
 
@@ -185,7 +185,7 @@ Please note that the curly brackets seen in the text box will not be sent in mes
 
 There are two values within the Settings.ini file that control how long the script should wait in milliseconds before sending another message when its been instructed to begin spamming. The default values are 500 and 1000.
 
-This means that after sending a spam message the script will wait at least half a second but no longer than one second before sending another message. The script will randomly pick a time between the Min/Max. So setting them to 3000,10500 for example would make at wait at least 3 seconds but no longer than 10.5 seconds to send the next message.
+This means that after sending a spam message the script will wait at least half a second but no longer than one second before sending another message. The script will randomly pick a time between the Min/Max. So setting them to 3000,10500 for example would make it wait at least 3 seconds but no longer than 10.5 seconds to send the next message.
 
 ### 2.4 Set new hotkeys
 
@@ -215,7 +215,7 @@ Will pause or unpause the spam messages after they have begun. To cancel the spa
 
 #### Default hotkey: Alt+[
 
-You will be presented with an input prompt asking you how many messages you would like to send. The value you enter should not contain any commas. Upon clicking “Ok” or pressing the Enter key the script will start sending messages in a numerical order with the intent to spawn pokemon.
+You will be presented with an input prompt asking you how many messages you would like to send. The value you enter should not contain any commas. Upon clicking “Ok” or pressing the Enter key the script will start sending messages in a numerical order.
 
 ![messagespam1](https://i.imgur.com/1a9JxX6.png) - In this case I've entered the number 13 into the prompt.
 
@@ -281,7 +281,7 @@ Will check the most recent catch.
 
 (info latest)
 
-**Please note unless you caught your current last pokemon with the catch macro, the information on screen is inaccurate.**
+**Unless you caught your current last pokemon with the catch macro, the information displayed in the status menu is inaccurate.**
 
 ### 3.6 Quick sell
 
@@ -341,7 +341,7 @@ I dont think anything about this menu needs to be explained in detail. You click
 
 ![search menu](https://i.imgur.com/bCuS1me.png)
 
-Setting anything to "--" will tell the script not to include it in the search. 
+Setting anything to "--" will tell the script not to include it in the search.
 
 ### 5.1 Reset buttons
 
