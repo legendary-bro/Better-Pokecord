@@ -14,6 +14,8 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 
 [0.4 Disclaimer](#04-use-this-script-at-your-own-risk)
 
+[0.5 Donate](#05-donate)
+
 ### [**1.0 General Controls**](#10-general-controls-1)
 
 [1.1 Exiting the script](#11-exiting-the-script)
@@ -52,7 +54,7 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 
 [3.5 Info latest](#35-info-latest)
 
-[3.6 Quick sell](#35-quick-sell)
+[3.6 Quick sell](#36-quick-sell)
 
 [3.7 Quick buy](#37-quick-buy)
 
@@ -91,6 +93,12 @@ I've included a compiled .exe of the script itself but it will not run on 32-bit
 Head over to the [releases page](https://github.com/eddhuh/Better-Pokecord/releases) and download the latest release.
 
 You can clone/download directly from the master branch if you'd like. But you will not get an .exe file should you need one, and I will not be providing support for any features committed to the master branch that are not yet in a release.
+
+### 0.5 Donate
+
+Better Pokecord is free for all public and commercial use so long as you adhere to the terms & conditions laid out in the [GPL-3.0](https://github.com/eddhuh/Better-Pokecord/blob/master/LICENSE.txt) license. But if you're feeling generous you can send a donation to me via my [Paypal link](https://www.paypal.me/CNichols0205).
+
+**Donating does not give you any kind of reward or new features. All you will get for this is a silent thank you from me. Want to be clear about this.**
 
 ### 0.4 Use this script at your own risk
 
