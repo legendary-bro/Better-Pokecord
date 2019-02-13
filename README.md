@@ -94,15 +94,15 @@ Head over to the [releases page](https://github.com/eddhuh/Better-Pokecord/relea
 
 You can clone/download directly from the master branch if you'd like. But you will not get an .exe file should you need one, and I will not be providing support for any features committed to the master branch that are not yet in a release.
 
+### 0.4 Use this script at your own risk
+
+Pokecord is fairly clear about its stance on the usage of macro tools on its start message when you begin to play. I’ve been using scripts on Pokecord for some time and while I dont think there is high risk while using this & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
+
 ### 0.5 Donate
 
 Better Pokecord is free for all public and commercial use so long as you adhere to the terms & conditions laid out in the [GPL-3.0](https://github.com/eddhuh/Better-Pokecord/blob/master/LICENSE.txt) license. But if you're feeling generous you can send a donation to me via my [Paypal link](https://www.paypal.me/CNichols0205).
 
 **Donating does not give you any kind of reward or new features. All you will get for this is a silent thank you from me. Want to be clear about this.**
-
-### 0.4 Use this script at your own risk
-
-Pokecord is fairly clear about its stance on the usage of macro tools on its start message when you begin to play. I’ve been using scripts on Pokecord for some time and while I dont think there is high risk while using this & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
 
 ## 1.0 General Controls
 
