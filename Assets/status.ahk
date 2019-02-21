@@ -77,7 +77,7 @@ marketinfo:
 
 trade:
     sleepwin("Discord",20)
-    setkeydelay, 120
+    setkeydelay, 20
     send % prefix "p add "
     loop, parse, clipboard, `n
     {
@@ -89,7 +89,7 @@ trade:
             parsesanity += 1
         send % marketarray[7+parsesanity] " "
     }
-    send, `r
+    send % "`r" prefix "confirm" 
     gosub, msgcount
     return
 
