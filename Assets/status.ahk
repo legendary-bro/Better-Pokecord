@@ -58,13 +58,13 @@ marketinfo:
         parsesanity := 0
         marketarray := strsplit(a_loopfield, a_space)
         if (marketarray[1] = "level") {
-            if (marketarray[3]="alolan"||marketarray[3]="mega"||marketarray[3]="mime"||marketarray[4]="mime")
+            if (marketarray[3]="alolan"||marketarray[3]="primal"||marketarray[3]="mega"||marketarray[3]="mime"||marketarray[4]="mime")
                 parsesanity += 1
             if (marketarray[5]="x"||marketarray[5]="y")
                 parsesanity += 1
             send % prefix "market info " marketarray[6+parsesanity] "`r"
         } else {
-            if (marketarray[1]="alolan"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
+            if (marketarray[1]="alolan"||marketarray[1]="primal"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
                 parsesanity += 1
             if (marketarray[3]="x"||marketarray[3]="y")
                 parsesanity += 1
@@ -83,7 +83,7 @@ trade:
     {
         parsesanity := 0
         marketarray := strsplit(a_loopfield, a_space)
-        if (marketarray[1]="alolan"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
+        if (marketarray[1]="alolan"||marketarray[1]="primal"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
             parsesanity += 1
         if (marketarray[3]="x"||marketarray[3]="y")
             parsesanity += 1
@@ -106,7 +106,7 @@ marketsell:
         parsesanity := 0
         loopcount += 1
         marketarray := strsplit(a_loopfield, a_space)
-        if (marketarray[1]="alolan"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
+        if (marketarray[1]="alolan"||marketarray[1]="primal"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
             parsesanity += 1
         if (marketarray[3]="x"||marketarray[3]="y")
             parsesanity += 1
@@ -134,7 +134,7 @@ marketbuy:
         parsesanity := 0
         loopcount += 1
         marketarray := strsplit(a_loopfield, a_space)
-        if (marketarray[3]="alolan"||marketarray[3] = "mega"||marketarray[3] = "mime"||marketarray[4] = "mime")
+        if (marketarray[3]="alolan"||marketarray[3]="primal"||marketarray[3] = "mega"||marketarray[3] = "mime"||marketarray[4] = "mime")
             parsesanity += 1
         if (marketarray[5]="x"||marketarray[5]="y")
             parsesanity += 1
