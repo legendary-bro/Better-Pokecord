@@ -100,7 +100,7 @@ Pokecord is fairly clear about its stance on the usage of macro tools on its sta
 
 ### 0.5 Donate
 
-Better Pokecord is free for all private and commercial use so long as you adhere to the terms & conditions laid out in the [GPL-3.0](https://github.com/eddhuh/Better-Pokecord/blob/master/LICENSE.txt) license. But if you're feeling generous you can send a donation to me via my [Paypal link](https://www.paypal.me/CNichols0205).
+Better Pokecord is free for all private and commercial use so long as you adhere to the terms & conditions laid out in the [GPL-3.0](https://github.com/eddhuh/Better-Pokecord/blob/master/LICENSE.txt) license. But if you're feeling generous you can send a donation to me via my [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BNHZTJSTSPG86&currency_code=USD&source=url) link.
 
 **Donating does not give you any kind of reward or new features. All you will get for this is a silent thank you from me. Want to be clear about this.**
 
