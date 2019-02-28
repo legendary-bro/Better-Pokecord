@@ -1,36 +1,19 @@
 catchpokemon:
-    setkeydelay, -1
-    send % prefix "catch "
-    input, vpokemon, i v t20, {enter}, %pokemonlist%
-    if (errorlevel = "match") {
-        send, `r
-        gosub, msgcount
-        pokemoncaught += 1
-        lastpokemoncaught := vpokemon
-    }
-    if (errorlevel = "endkey:enter") {
-        gosub, msgcount
-        pokemoncaught += 1
-        lastpokemoncaught := vpokemon
-    }
-    if (errorlevel = "timeout") {
-        if winactive("Discord")
-            send, {ctrl down}a{ctrl up}{backspace}
-    }
+    lastpokemoncaught := vpokemon := selectpkmn(prefix)
     return
 
 setpokemon:
-    setkeydelay, -1
-    send % "waiting "
-    input, vpokemon, i v t20,{\}, %pokemonlist%
-    if (errorlevel = "match")
-        send, {ctrl down}a{ctrl up}{backspace}
-    if (errorlevel = "endkey:\")
-        send, {ctrl down}a{ctrl up}{backspace}
-    if (errorlevel = "timeout") {
-        if winactive("Discord")
-            send, {ctrl down}a{ctrl up}{backspace}
-    }
+    vpokemon := selectpkmn(prefix,false)
+    return
+
+pause:
+    pause
+    return
+
+end::suspend
+^end::exit
++end::
+    gosub, reload
     return
 
 hotkeys:
@@ -74,14 +57,4 @@ hotkeys:
     hotkey, %hgenerator%, spamspawn
     hotkey, %hscrambled%, spamscrambled
     hotkey, %hpause%, pause
-    return
-
-pause:
-    pause
-    return
-
-end::suspend
-^end::exit
-+end::
-    gosub, reload
     return

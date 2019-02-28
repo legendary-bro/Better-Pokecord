@@ -21,7 +21,7 @@ marketmenu:
     gui, add, edit, x140 y80 w60 h20 limit3 number vmarketlevel, %marketlevel%
     gui, add, text, x230 y60 w60 h20 center, price
     gui, add, edit, x230 y80 w60 h20 vmarketprice, %marketprice%
-    gui, add, dropdownlist, x140 y100 w150 h10 r9 vmarketorder, %marketorder%||price ascending|iv ascending|lvl ascending|name ascending|price descending|iv descending|lvl descending|name descending
+    gui, add, dropdownlist, x140 y100 w150 h10 r9 vmarketorder, %marketorder%||price a|iv a|lvl a|name a|price d|iv d|lvl d|name d
     gui, add, dropdownlist, x140 y120 w150 h20 r20 vmarkettype, %markettype%||bug|dark|dragon|electric|fairy|fighting|fire|flying|ghost|grass|ground|ice|normal|poison|psychic|rock|steel|water
     gui, add, checkbox, x140 y140 w70 h20 center checked%marketshiny% vmarketshiny, shiny
     gui, add, checkbox, x210 y140 w80 h20 center checked%marketshowiv% vmarketshowiv, show iv

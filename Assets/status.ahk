@@ -26,128 +26,40 @@ nicknames:
     return
 
 checkspecies:
-    sleepwin("Discord",20)
-    send % prefix "pokemon --name " vpokemon "`r"
-    gosub, msgcount
+    send(prefix,"pokemon --name " vpokemon)
     return
 
 searchiv:
-    sleepwin("Discord",20)
-    send % prefix "market search --name " vpokemon " --order iv descending --showiv`r"
-    gosub, msgcount
+    send(prefix,"market search --name " vpokemon " --order iv descending --showiv")
     return
 
 searchprice:
-    sleepwin("Discord",20)
-    send % prefix "market search --name " vpokemon " --order price ascending --showiv`r"
-    gosub, msgcount
+    send(prefix,"market search --name " vpokemon " --order price ascending --showiv")
     return
 
 latestcatch:
-    sleepwin("Discord",20)
-    send % prefix "info latest`r"
-    gosub, msgcount
-    return
-
-marketinfo:
-    sleepwin("Discord",20)
-    setkeydelay, 120
-    send, {ctrldown}c{ctrlup}
-    loop, parse, clipboard, `n
-    {
-        parsesanity := 0
-        marketarray := strsplit(a_loopfield, a_space)
-        if (marketarray[1] = "level") {
-            if (marketarray[3]="alolan"||marketarray[3]="primal"||marketarray[3]="mega"||marketarray[3]="mime"||marketarray[4]="mime")
-                parsesanity += 1
-            if (marketarray[5]="x"||marketarray[5]="y")
-                parsesanity += 1
-            send % prefix "market info " marketarray[6+parsesanity] "`r"
-        } else {
-            if (marketarray[1]="alolan"||marketarray[1]="primal"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
-                parsesanity += 1
-            if (marketarray[3]="x"||marketarray[3]="y")
-                parsesanity += 1
-            send % prefix "info " marketarray[7+parsesanity] "`r"
-        }
-        gosub, msgcount
-        sleep, 2000
-    }
-    return
-
-trade:
-    sleepwin("Discord",20)
-    setkeydelay, 20
-    send % prefix "p add "
-    loop, parse, clipboard, `n
-    {
-        parsesanity := 0
-        marketarray := strsplit(a_loopfield, a_space)
-        if (marketarray[1]="alolan"||marketarray[1]="primal"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
-            parsesanity += 1
-        if (marketarray[3]="x"||marketarray[3]="y")
-            parsesanity += 1
-        send % marketarray[7+parsesanity] " "
-    }
-    send % "`r" prefix "confirm" 
-    gosub, msgcount
-    return
-
-marketsell:
-    sleepwin("Discord",20)
-    setkeydelay, 120
-    send, {ctrldown}c{ctrlup}
-    inputbox, sellprice, how much to list each for?
-    if (errorlevel = 1)
-        return
-    sleepwin("Discord",20)
-    loop, parse, clipboard, `n
-    {
-        parsesanity := 0
-        loopcount += 1
-        marketarray := strsplit(a_loopfield, a_space)
-        if (marketarray[1]="alolan"||marketarray[1]="primal"||marketarray[1]="mega"||marketarray[1]="mime"||marketarray[2]="mime")
-            parsesanity += 1
-        if (marketarray[3]="x"||marketarray[3]="y")
-            parsesanity += 1
-        send % prefix "market list " marketarray[7+parsesanity] " " sellprice "`r"
-        gosub, msgcount
-        if (a_index = 10) {
-            send % prefix "confirmlist`r"
-            gosub, msgcount
-            break
-        }
-    }
-    if (loopcount != 10) {
-        send % prefix "confirmlist`r"
-        gosub, msgcount
-    }
-    loopcount := 0
+    send(prefix,"info latest")
     return
 
 marketbuy:
-    sleepwin("Discord",20)
-    setkeydelay, 120
     send, {ctrldown}c{ctrlup}
-    loop, parse, clipboard, `n
-    {
-        parsesanity := 0
-        loopcount += 1
-        marketarray := strsplit(a_loopfield, a_space)
-        if (marketarray[3]="alolan"||marketarray[3]="primal"||marketarray[3] = "mega"||marketarray[3] = "mime"||marketarray[4] = "mime")
-            parsesanity += 1
-        if (marketarray[5]="x"||marketarray[5]="y")
-            parsesanity += 1
-        send % prefix "market buy " marketarray[6+parsesanity] "`r"
-        gosub, msgcount
-        if (a_index = 10) {
-            send % prefix "confirmbuy`r"
-            gosub, msgcount
-        }
-    }
-    if (loopcount != 10) {
-        send % prefix "confirmbuy`r"
-        gosub, msgcount
-    }
-    loopcount := 0
+    send(prefix,embedids(clipboard),120,1)
+    return
+
+marketsell:
+    send, {ctrldown}c{ctrlup}
+    send(prefix,embedids(clipboard,7),120,2)
+    return
+
+trade:
+    send, {ctrldown}c{ctrlup}
+    send(prefix,embedids(clipboard,7),30,3)
+    return
+
+marketinfo:
+    send, {ctrldown}c{ctrlup}
+    if ((searchtype := substr(clipboard,1,5)) = "level")
+        send(prefix,embedids(clipboard),150,5)
+    else
+        send(prefix,embedids(clipboard,7),160,4)
     return
