@@ -94,6 +94,7 @@ send(pr,tx,kd:=60,ty:=0) {
                 send % pr "confirmbuy`r"
                 gosub, msgcount
             }
+            return
         }
         if else (ty = 2) {
             inputbox, s, how much to list each for?
@@ -113,6 +114,7 @@ send(pr,tx,kd:=60,ty:=0) {
                 send % pr "confirmlist`r"
                 gosub, msgcount
             }
+            return
         }
         if else (ty = 3) {
             send % pr "p add "
@@ -120,24 +122,27 @@ send(pr,tx,kd:=60,ty:=0) {
                 send % v " "
             send % "`r" pr "confirm"
             gosub, msgcount
+            return
         }
         if else (ty = 4) {
             for k, v in tx {
                 send % pr "info " v "`r"
                 sleep, 1000
             }
+            return
         } else {
             for k, v in tx {
                 send % pr "market info " v "`r"
                 sleep, 1000
             }
+            return
         }
     } else {
         sleepwin("Discord")
         send % pr tx "`r"
         gosub, msgcount
+        return
     }
-    return
 }
 
 showgui(w,h,t) {
