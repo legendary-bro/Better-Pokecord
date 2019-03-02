@@ -24,6 +24,13 @@ embedids(l,i:=6) {
     return p
 }
 
+millisectotime(msec) {
+	secs := floor(mod((msec / 1000),60))
+	mins := floor(mod((msec / (1000 * 60)), 60) )
+	hour := floor(mod((msec / (1000 * 60 * 60)) , 24))
+	return format("{:02}:{:02}:{:02}",hour,mins,secs)
+}
+
 percentage(s,t) {
     if (s/t = 1)
         return "100%"
