@@ -26,7 +26,7 @@ embedids(l,i:=6) {
 
 millisectotime(msec) {
 	secs := floor(mod((msec / 1000),60))
-	mins := floor(mod((msec / (1000 * 60)), 60) )
+	mins := floor(mod((msec / (1000 * 60)), 60))
 	hour := floor(mod((msec / (1000 * 60 * 60)) , 24))
 	return format("{:02}:{:02}:{:02}",hour,mins,secs)
 }
@@ -77,7 +77,7 @@ selectpkmn(pr,ty:=true) {
     return vp
 }
 
-send(pr,tx,kd:=60,ty:=0) {
+send(pr,tx,kd:=40,ty:=0) {
     setkeydelay % kd
     if isobject(tx) {
         if (ty = 1) {

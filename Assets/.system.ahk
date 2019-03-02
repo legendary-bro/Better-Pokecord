@@ -39,7 +39,7 @@ iniread, marketshowiv, settings.ini, market, showiv
 setworkingdir, %a_scriptdir%
 onexit, saveandexit
 settitlematchmode, 2
-setkeydelay, 60
+setkeydelay, 40
 bootcount += 1
 messagessent := 0
 gosub, hotkeys
