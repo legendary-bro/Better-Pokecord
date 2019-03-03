@@ -41,7 +41,6 @@ inventorysearch:
     marketsearch := prefix "pokemon"
     if (ismarketsearch = 1)
         marketsearch := prefix "market search"
-    setkeydelay, 40
     gosub, searchlogic
     return
 
