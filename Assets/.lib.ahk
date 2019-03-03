@@ -10,6 +10,15 @@ commify(n) {
     return i
 }
 
+clipcheck(secondstowait:=3,anydata:=false) {
+    clipboard := ""
+    send, ^c
+    clipwait, % secondstowait, % anydata
+    if (errorlevel = 1)
+        clipcheck()
+    return clipboard
+}
+
 embedids(page,defindex:=6) {
     sanitycheck := "alolan,attack,defense,form,mega,mime,primal,speed,x,y"
     ids := []
