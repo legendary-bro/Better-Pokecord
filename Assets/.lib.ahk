@@ -77,72 +77,12 @@ selectpkmn(pr,ty:=true) {
     return vp
 }
 
-send(pr,tx,kd:=40,ty:=0) {
+send(pr,tx,kd:=40) {
     setkeydelay % kd
-    if isobject(tx) {
-        if (ty = 1) {
-            for k, v in tx {
-                c += 1
-                send % pr "market buy " v "`r"
-                gosub, msgcount
-                if (a_index = 10) {
-                    send % pr "confirmbuy`r"
-                    gosub, msgcount
-                }
-            }
-            if (c != 10) {
-                send % pr "confirmbuy`r"
-                gosub, msgcount
-            }
-            return
-        }
-        if else (ty = 2) {
-            inputbox, s, how much to list each for?
-            if (errorlevel = 1)
-                return
-            for k, v in tx {
-                c += 1
-                send % pr "market list " v " " s "`r"
-                gosub, msgcount
-                if (a_index = 10) {
-                    send % pr "confirmlist`r"
-                    gosub, msgcount
-                    break
-                }
-            }
-            if (c != 10) {
-                send % pr "confirmlist`r"
-                gosub, msgcount
-            }
-            return
-        }
-        if else (ty = 3) {
-            send % pr "p add "
-            for k, v in tx
-                send % v " "
-            send % "`r" pr "confirm"
-            gosub, msgcount
-            return
-        }
-        if else (ty = 4) {
-            for k, v in tx {
-                send % pr "info " v "`r"
-                sleep, 1000
-            }
-            return
-        } else {
-            for k, v in tx {
-                send % pr "market info " v "`r"
-                sleep, 1000
-            }
-            return
-        }
-    } else {
-        sleepwin("Discord")
-        send % pr tx "`r"
-        gosub, msgcount
-        return
-    }
+    sleepwin("Discord")
+    send % pr tx "`r"
+    gosub, msgcount
+    return
 }
 
 showgui(w,h,t) {

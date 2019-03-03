@@ -43,23 +43,50 @@ latestcatch:
 
 marketbuy:
     send, {ctrldown}c{ctrlup}
-    send(prefix,embedids(clipboard),120,1)
+    for each, pkmn in array := embedids(clipboard) {
+        send(prefix,"market buy " pkmn,120)
+        if (mod(a_index,10) = 0)
+            send(prefix,"confirmbuy",120)
+        if (a_index = array.maxindex())
+            if (mod(a_index,10) != 0)
+                send(prefix,"confirmbuy",120)
+    }
     return
 
 marketsell:
     send, {ctrldown}c{ctrlup}
-    send(prefix,embedids(clipboard,7),120,2)
+    inputbox, price, Better Pokecord - Quick Sell, How much would you like to list each one for?
+    if (errorlevel = 1)
+        return
+    for each, pkmn in array := embedids(clipboard,7) {
+        send(prefix,"market list " pkmn " " price,120)
+        if (mod(a_index,10) = 0)
+            send(prefix,"confirmlist",120)
+        if (a_index = array.maxindex())
+            if (mod(a_index,10) != 0)
+                send(prefix,"confirmlist",120)
+    }
     return
 
 trade:
-    send, {ctrldown}c{ctrlup}
-    send(prefix,embedids(clipboard,7),30,3)
+    setkeydelay, 30
+    send % prefix "p add "
+    for each, pkmn in array := embedids(clipboard,7)
+       send % pkmn " "
+    send % "`r" prefix "confirm"
+    gosub, msgcount
     return
 
 marketinfo:
     send, {ctrldown}c{ctrlup}
     if ((searchtype := substr(clipboard,1,5)) = "level")
-        send(prefix,embedids(clipboard),150,5)
+        for each, pkmn in array := embedids(clipboard) {
+            send(prefix,"market info " pkmn,160)
+            sleep, 2000
+        }
     else
-        send(prefix,embedids(clipboard,7),160,4)
+        for each, pkmn in array := embedids(clipboard,7) {
+            send(prefix,"info " pkmn,160)
+            sleep, 2000
+        }
     return
