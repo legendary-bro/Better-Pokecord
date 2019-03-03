@@ -54,7 +54,7 @@ hotkeys:
     hotkey, %hquickbuy%, marketbuy
     hotkey, %hinfo%, marketinfo
     hotkey, %hnumerical%, spamnum
-    hotkey, %hgenerator%, spamspawn
+    hotkey, %htime%, spamtime
     hotkey, %hscrambled%, spamscrambled
     hotkey, %hpause%, pause
     return

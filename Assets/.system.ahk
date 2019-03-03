@@ -16,7 +16,7 @@ iniread, htrade, settings.ini, system, trade
 iniread, hquickbuy, settings.ini, system, quickbuy
 iniread, hinfo, settings.ini, system, info
 iniread, hnumerical, settings.ini, system, numerical
-iniread, hgenerator, settings.ini, system, generator
+iniread, htime, settings.ini, system, time
 iniread, hscrambled, settings.ini, system, scrambled
 iniread, hpause, settings.ini, system, pause
 iniread, bootcount, settings.ini, stats, boot_count
@@ -83,7 +83,7 @@ updateini:
     iniwrite, %hquickbuy%, settings.ini, system, quickbuy
     iniwrite, %hinfo%, settings.ini, system, info
     iniwrite, %hnumerical%, settings.ini, system, numerical
-    iniwrite, %hgenerator%, settings.ini, system, generator
+    iniwrite, %htime%, settings.ini, system, time
     iniwrite, %hscrambled%, settings.ini, system, scrambled
     iniwrite, %hpause%, settings.ini, system, pause
     iniwrite, %bootcount%, settings.ini, stats, boot_count

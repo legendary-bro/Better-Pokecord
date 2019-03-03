@@ -58,7 +58,7 @@ hotkeysmenu:
     gui, add, text, x270 y150 w70 h20 center, buy
     gui, add, text, x270 y180 w70 h20 center, info
     gui, add, text, x400 y30 w70 h20 center, numerical
-    gui, add, text, x400 y80 w70 h20 center, generator
+    gui, add, text, x400 y80 w70 h20 center, time
     gui, add, text, x400 y130 w70 h20 center, scrambled
     gui, add, text, x400 y180 w70 h20 center, pause
     gui, add, hotkey, vhoptions x80 y30 w50 h20 , %hoptions%
@@ -76,7 +76,7 @@ hotkeysmenu:
     gui, add, hotkey, vhquickbuy x340 y150 w50 h20 , %hquickbuy%
     gui, add, hotkey, vhinfo x340 y180 w50 h20 , %hinfo%
     gui, add, hotkey, vhnumerical x470 y30 w50 h20 , %hnumerical%
-    gui, add, hotkey, vhgenerator x470 y80 w50 h20 , %hgenerator%
+    gui, add, hotkey, vhtime x470 y80 w50 h20 , %htime%
     gui, add, hotkey, vhscrambled x470 y130 w50 h20 , %hscrambled%
     gui, add, hotkey, vhpause x470 y180 w50 h20 , %hpause%
     gui, add, button, ghotkeysupdate x10 y210 w510 h30 , submit
@@ -105,7 +105,7 @@ hotkeysreset:
     hquickbuy:="NumpadAdd"
     hinfo:="^NumpadAdd"
     hnumerical:="!["
-    hgenerator:="^["
+    htime:="^["
     hpause:="["
     gosub, hotkeys
     gosub, hotkeysmenu
@@ -115,7 +115,7 @@ spammenu:
     gui, destroy
     gui, add, text, x10 y0 w300 h20 center border, spam options
     gui, add, button, x10 y40 w100 h30 gspamnum, counting
-    gui, add, button, x110 y40 w100 h30 gspamspawn, generator
+    gui, add, button, x110 y40 w100 h30 gspamtime, time
     gui, add, button, x210 y40 w100 h30 gspamscrambled, scrambled
     showgui(320,80,"Better Pokecord - Spam")
     return
@@ -130,53 +130,17 @@ spamnum:
     }
     return
 
-spamspawn:
-    inputbox, totalmessages, Better Pokecord - Generator Spam, how many pokemon to spawn?
+spamtime:
+    inputbox, totalmessages, Better Pokecord - Timed Spam, how many minutes while idle would you like to spam for?
     if (errorlevel = 1)
         return
-    vpokemonarray := ["Pidegot","Kabuto","Mew","Porygon","Klink"]
-    loop, parse, pokemonlist, csv
-    {
-        vpokemonarray.push(a_loopfield)
-    }
-    natures := ["adamant","bashful","bold","brave","calm","careful","docile","gentile","hardy","hasty","impish","jolly","lax","loneley","mild","modest","naive","naughty","quiet","quirky","rash","relaxed","sassy","serious","timid"]
-    sleepwin("Discord",20)
-    while a_index <= totalmessages {
-        random, level  , 1, 90
-        random, hpiv   , 1, 31
-        random, atkiv  , 1, 31
-        random, defiv  , 1, 31
-        random, satkiv , 1, 31
-        random, sdefiv , 1, 31
-        random, spiv   , 1, 31
-        random, isshiny, 1, 4096
-        spawnedpokemon := vpokemonarray[random(1, vpokemonarray.maxindex())]
-        spawnednature := natures[random(1, natures.maxindex())]
-        totaliv := percentage((hpiv+atkiv+defiv+satkiv+sdefiv+spiv),186)
-        totalcount := "# " commify(a_index) "/" commify(totalmessages) " (" percentage(a_index,totalmessages) ")"
-        clipboard =
-        (ltrim
-            ``````cs
-            %totalcount%
-            level   : %level%
-            pokemon : %spawnedpokemon%
-            total iv: %totaliv%
-            nature  : %spawnednature%
-
-            hp      : %hpiv%/31
-            atk     : %atkiv%/31
-            def     : %defiv%/31
-            satk    : %satkiv%/31
-            sdef    : %sdefiv%/31
-            spd     : %spiv%/31``````
-        )
-        send, ^v `r
-        gosub, msgcount
-        if (isshiny = 1) {
-            send, :star2:shiny:star2:`r
-            gosub, msgcount
+    loop {
+        if (a_timeidlephysical >= (totalmessages*60000)) {
+            send("","``" millisectotime(totalmessages*60000) " (" percentage(totalmessages*60000,totalmessages*60000) ")``",-1)
+            break
         }
-        sleep, random(mininterval,maxinterval)
+        send("","``" millisectotime(a_timeidlephysical) " (" percentage(a_timeidlephysical,totalmessages*60000) ")``",-1)
+        sleep, random(mininterval, maxinterval)
     }
     return
 
