@@ -34,6 +34,10 @@ millisectotime(msec) {
 percentage(s,t) {
     if (s/t = 1)
         return "100%"
+    if (t > 1000000)
+        return % substr((s/t),3,2) "." substr((s/t),5,5) "%"
+    if (t > 100000)
+        return % substr((s/t),3,2) "." substr((s/t),5,4) "%"
     if (t > 10000)
         return % substr((s/t),3,2) "." substr((s/t),5,3) "%"
     return % substr((s/t),3,2) "." substr((s/t),5,2) "%"
