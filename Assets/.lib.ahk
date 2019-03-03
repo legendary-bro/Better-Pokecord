@@ -12,6 +12,7 @@ commify(n) {
 
 clipcheck(secondstowait:=3,anydata:=false) {
     clipboard := ""
+    sleepwin("Discord")
     send, ^c
     clipwait, % secondstowait, % anydata
     if (errorlevel = 1)
@@ -21,16 +22,20 @@ clipcheck(secondstowait:=3,anydata:=false) {
 
 embedids(page,defindex:=6) {
     sanitycheck := "alolan,attack,defense,form,mega,mime,primal,speed,x,y"
-    ids := []
     loop, parse, % page, `n
     {
         parsesanity := 0
         for each, index in string := strsplit(a_loopfield, a_space)
             if index in % sanitycheck
                 parsesanity += 1
-        ids.push(string[defindex+parsesanity])
+        ids .= string[defindex+parsesanity] ","
     }
-    return ids
+    ids := trim(ids,",")
+    sort, ids, N R U D`,
+    out :=	[]
+	loop, parse, ids, `,
+		out.push(a_loopfield)
+    return out
 }
 
 millisectotime(msec) {
