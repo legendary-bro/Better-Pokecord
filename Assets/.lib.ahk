@@ -67,12 +67,9 @@ selectpkmn(prefix,iscatch:=true) {
         send % "waiting "
     input, selectedpkmn, i v t20, {enter}, % pokedex
     if (iscatch = true) {
-        if (errorlevel = "match") {
+        if (errorlevel = "match")
             send, `r
-            gosub, msgcount
-            gosub, pkmncount
-        }
-        if (errorlevel = "endkey:enter") {
+        if (errorlevel contains "match,endkey:enter") {
             gosub, msgcount
             gosub, pkmncount
         }
@@ -80,11 +77,7 @@ selectpkmn(prefix,iscatch:=true) {
             if winactive("Discord")
                 send, {ctrl down}a{ctrl up}{backspace}
     } else {
-        if (errorlevel = "match")
-            send, {ctrl down}a{ctrl up}{backspace}
-        if (errorlevel = "endkey:\")
-            send, {ctrl down}a{ctrl up}{backspace}
-        if (errorlevel = "timeout")
+        if (errorlevel contains "match,endkey:\,timeout")
             if winactive("Discord")
                 send, {ctrl down}a{ctrl up}{backspace}
     }

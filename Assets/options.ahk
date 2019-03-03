@@ -18,27 +18,22 @@ optionsmenu:
 save:
     gui, submit
     prefcheck := strsplit(prefix)
-    prefix =
-    checkfor := "!,#,^,+"
+    prefix := ""
     for each, character in prefcheck {
-        if character in %checkfor%
+        if character in % "!,#,^,+"
             character := "{" character "}"
-        prefix := prefix . character
+        prefix .= character
     }
     gosub, optionsmenu
     return
 
 balance:
-    sleepwin("Discord",20)
-    send % prefix "bal`r"
-    gosub, msgcount
+    send(prefix,"bal")
     gosub, optionsmenu
     return
 
 daily:
-    sleepwin("Discord",20)
-    send % prefix "daily`r"
-    gosub, msgcount
+    send(prefix,"daily")
     gosub, optionsmenu
     return
 
@@ -126,15 +121,12 @@ spammenu:
     return
 
 spamnum:
-    inputbox, totalmessages, Better Pokecord - Counting Spam, how many messages to send?
+    inputbox, totalmessages, Better Pokecord - Counting Spam, how many messages would you like to send?
     if (errorlevel = 1)
         return
-    sleepwin("Discord",20)
-    while a_index <= totalmessages {
-        clipboard := "``" commify(a_index) "/" commify(totalmessages) " (" percentage(a_index,totalmessages) ")``"
-        send, ^v `r
-        gosub, msgcount
-        sleep, random(mininterval, maxinterval)
+    loop, % totalmessages {
+        send("","``" commify(a_index) "/" commify(totalmessages) " (" percentage(a_index,totalmessages) ")``",-1)
+        sleep, random(mininterval,maxinterval)
     }
     return
 
@@ -189,18 +181,15 @@ spamspawn:
     return
 
 spamscrambled:
-    inputbox, totalmessages, Better Pokecord - Scrambled Spam, how many messages to send?
+    inputbox, totalmessages, Better Pokecord - Scrambled Spam, how many messages would you like to send?
     if (errorlevel = 1)
         return
     char := strsplit("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@$*")
-    sleepwin("Discord",20)
-    while a_index <= totalmessages {
+    loop, % totalmessages {
         clipboard =
-        while a_index <= random(5,12) {
-            clipboard := clipboard . char[random(1,char.maxindex())]
-        }
-        send, ^v `r
-        gosub, msgcount
+        loop, % random(5,12)
+            clipboard .= char[random(1,char.maxindex())]
+        send("","^v"-1)
         sleep, random(mininterval,maxinterval)
     }
     return
