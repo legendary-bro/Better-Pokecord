@@ -22,7 +22,20 @@ statusmenu:
     return
 
 nicknames:
-    msgbox, % "being worked on"
+    sleepwin("Discord")
+    send, {ctrldown}c{ctrlup}
+    inputbox, nickname, Better Pokecord - Quick Nickname, What would you like to nickname them?`n`n(You can enter two dash's "--" to reset them)
+    if (errorlevel = 1)
+        return
+    for each, pkmn in array := embedids(clipboard,7) {
+        send(prefix,"select " pkmn,120)
+        sleep, 1000
+        if (nickname != "--")
+            send(prefix,"nickname " nickname,120)
+        else
+            send(prefix,"nickname",120)
+        sleep, 1000
+    }
     return
 
 checkspecies:
