@@ -56,8 +56,10 @@ marketsell:
         return
     for each, pkmn in array := embedids(clipboard,7) {
         send(prefix,"market list " pkmn " " price,120)
-        if (mod(a_index,10) = 0)
+        if (mod(a_index,10) = 0) {
             send(prefix,"confirmlist",120)
+            break
+        }
         if (a_index = array.maxindex())
             if (mod(a_index,10) != 0)
                 send(prefix,"confirmlist",120)
