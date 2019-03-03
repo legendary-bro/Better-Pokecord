@@ -204,4 +204,3 @@ spamscrambled:
         sleep, random(mininterval,maxinterval)
     }
     return
-    

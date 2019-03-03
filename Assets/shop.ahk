@@ -92,4 +92,3 @@ buymega:
     gosub, msgcount
     gosub, shopmenu
     return
-    
