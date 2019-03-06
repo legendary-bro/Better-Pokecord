@@ -38,7 +38,7 @@ latestcatch:
     return
 
 marketbuy:
-    for each, pkmn in array := [embedids(clipcheck())] {
+    for each, pkmn in array := embedids(clipcheck()) {
         send(prefix,"market buy " pkmn,120)
         if (mod(a_index,10) = 0)
             send(prefix,"confirmbuy",120)
@@ -65,7 +65,7 @@ marketsell:
 trade:
     setkeydelay, 30
     send % prefix "p add "
-    for each, pkmn in array := embedids(clipcheck(),7)
+    for each, pkmn in array := embedids(clipboard,7)
        send % pkmn " "
     send % "`r" prefix "confirm"
     gosub, msgcount
