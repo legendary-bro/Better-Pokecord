@@ -14,7 +14,9 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 
 [0.4 Disclaimer](#04-use-this-script-at-your-own-risk)
 
-[0.5 Donate](#05-donate)
+[0.5 Contact me](#05-contact-me)
+
+[0.6 Donate](#06-donate)
 
 ### [**1.0 General Controls**](#10-general-controls-1)
 
@@ -98,9 +100,13 @@ You can clone/download directly from the master branch if you'd like. But you wi
 
 Pokecord is fairly clear about its stance on the usage of macro tools on its start message when you begin to play. I’ve been using scripts on Pokecord for some time and while I dont think there is high risk while using this & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
 
-### 0.5 Donate
+### 0.5 Contact me
 
-Better Pokecord is free for all private and commercial use so long as you adhere to the terms & conditions laid out in the [GPL-3.0](https://github.com/eddhuh/Better-Pokecord/blob/master/LICENSE.txt) license. But if you're feeling generous you can send a donation to me via my [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BNHZTJSTSPG86&currency_code=USD&source=url) link.
+You can fairly easily contact me here on GitHub, but if youd like to keep up on what im doing with the project in detail you can check out Better Pokecord's [Twitter page](https://twitter.com/BPokecord). I'm happy to listen to any suggestions or concerns you have on either platform, though I will generally respond sooner on Twitter.
+
+### 0.6 Donate
+
+Better Pokecord is free for all private and commercial use so long as you follow the terms & conditions laid out in the [GPL-3.0](https://github.com/eddhuh/Better-Pokecord/blob/master/LICENSE.txt) license. But if you're feeling generous you can send a donation to me via my [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BNHZTJSTSPG86&currency_code=USD&source=url) link.
 
 **Donating does not give you any kind of reward or new features. All you will get for this is a silent thank you from me. Want to be clear about this.**
 
