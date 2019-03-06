@@ -104,7 +104,7 @@ Pokecord is fairly clear about its stance on the usage of macro tools on its sta
 
 ### 0.5 Contact me
 
-You can fairly easily contact me here on GitHub, but if youd like to keep up on what im doing with the project in detail you can check out Better Pokecord's [Twitter page](https://twitter.com/BPokecord). I'm happy to listen to any suggestions or concerns you have on either platform, though I will generally respond sooner on Twitter.
+You can fairly easily contact me here on GitHub, but if youd like to keep up on what im doing with the project in detail you can check out Better Pokecord's [Twitter page](https://twitter.com/BetterPokecord). I'm happy to listen to any suggestions or concerns you have on either platform, though I will generally respond sooner on Twitter.
 
 ### 0.6 Donate
 
