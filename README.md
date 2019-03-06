@@ -90,6 +90,8 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 
 I've included a compiled .exe of the script itself but it will not run on 32-bit systems. If you do not want to use the compiled .exe version then you will need [AutoHotKey](https://www.autohotkey.com/) to use the .ahk file instead. AutoHotKey is free, and is not a large download. Both the .ahk and the .exe do the same exact thing in terms of functionality, it is merely a matter of convenience as to which one you would like to use.
 
+You *may* need to run as admin. Im only aware of two situations where this had to be done but I'm still gonna leave the information here just in case its needed.
+
 ### 0.3 How to download
 
 Head over to the [releases page](https://github.com/eddhuh/Better-Pokecord/releases) and download the latest release.
