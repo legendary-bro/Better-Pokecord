@@ -26,11 +26,11 @@ checkspecies:
     return
 
 searchiv:
-    send(prefix,"market search --name " vpokemon " --order iv descending --showiv")
+    send(prefix,"market search --name " vpokemon " --order iv d --showiv")
     return
 
 searchprice:
-    send(prefix,"market search --name " vpokemon " --order price ascending --showiv")
+    send(prefix,"market search --name " vpokemon " --order price a --showiv")
     return
 
 latestcatch:
