@@ -16,8 +16,6 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 
 [0.5 Contact me](#05-contact-me)
 
-[0.6 Donate](#06-donate)
-
 ### [**1.0 General Controls**](#10-general-controls-1)
 
 [1.1 Exiting the script](#11-exiting-the-script)
@@ -107,12 +105,6 @@ Pokecord is fairly clear about its stance on the usage of macro tools on its sta
 ### 0.5 Contact me
 
 You can fairly easily contact me here on GitHub, but if youd like to keep up on what im doing with the project in detail you can check out Better Pokecord's [Twitter page](https://twitter.com/BetterPokecord). I'm happy to listen to any suggestions or concerns you have on either platform, though I will generally respond sooner on Twitter.
-
-### 0.6 Donate
-
-Better Pokecord is free for all private and commercial use so long as you follow the terms & conditions laid out in the [GPL-3.0](https://github.com/eddhuh/Better-Pokecord/blob/master/LICENSE.txt) license. But if you're feeling generous you can send a donation to me via my [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BNHZTJSTSPG86&currency_code=USD&source=url) link.
-
-**Donating does not give you any kind of reward or new features. All you will get for this is a silent thank you from me. Want to be clear about this.**
 
 ## 1.0 General Controls
 
