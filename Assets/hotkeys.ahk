@@ -20,15 +20,15 @@ hotkeys:
     hotkey, ifwinactive, Better Pokecord - Options
     hotkey, %hstatus%, statusmenu
     hotkey, %hshop%, shopmenu
-    hotkey, %hmarket%, marketmenu
+    hotkey, %hmarket%, pokedex
     hotkey, ifwinactive, Better Pokecord - Status
     hotkey, %hoptions%, optionsmenu
     hotkey, %hshop%, shopmenu
-    hotkey, %hmarket%, marketmenu
+    hotkey, %hmarket%, pokedex
     hotkey, ifwinactive, Better Pokecord - Shop
     hotkey, %hoptions%, optionsmenu
     hotkey, %hstatus%, statusmenu
-    hotkey, %hmarket%, marketmenu
+    hotkey, %hmarket%, pokedex
     hotkey, ifwinactive, Better Pokecord - Search
     hotkey, %hoptions%, optionsmenu
     hotkey, %hstatus%, statusmenu
@@ -37,12 +37,12 @@ hotkeys:
     hotkey, %hoptions%, optionsmenu
     hotkey, %hstatus%, statusmenu
     hotkey, %hshop%, shopmenu
-    hotkey, %hmarket%, marketmenu
+    hotkey, %hmarket%, pokedex
     hotkey, ifwinactive, Discord
     hotkey, %hoptions%, optionsmenu
     hotkey, %hstatus%, statusmenu
     hotkey, %hshop%, shopmenu
-    hotkey, %hmarket%, marketmenu
+    hotkey, %hmarket%, pokedex
     hotkey, %hcatch%, catchpokemon
     hotkey, %hset%, setpokemon
     hotkey, %hlatest%, latestcatch

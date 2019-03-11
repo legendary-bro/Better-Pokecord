@@ -1,10 +1,12 @@
 iniread, prefix, settings.ini, system, prefix
 iniread, mininterval, settings.ini, system, spam_msg_interval_min
 iniread, maxinterval, settings.ini, system, spam_msg_interval_max
+
 iniread, hoptions, settings.ini, system, options
 iniread, hstatus, settings.ini, system, status
 iniread, hshop, settings.ini, system, shop
 iniread, hmarket, settings.ini, system, market
+
 iniread, hcatch, settings.ini, system, catch
 iniread, hset, settings.ini, system, set
 iniread, hlatest, settings.ini, system, latest
@@ -24,18 +26,19 @@ iniread, totalmessagessent, settings.ini, stats, total_messages_sent
 iniread, vpokemon, settings.ini, stats, pokemon
 iniread, pokemoncaught, settings.ini, stats, pokemon_caught
 iniread, lastpokemoncaught, settings.ini, stats, last_pokemon_caught
-iniread, marketorder, settings.ini, market, order
-iniread, markettype, settings.ini, market, type
-iniread, marketlevel, settings.ini, market, level
-iniread, marketprice, settings.ini, market, price
-iniread, markethpiv, settings.ini, market, hpiv
-iniread, marketatkiv, settings.ini, market, atkiv
-iniread, marketdefiv, settings.ini, market, defiv
-iniread, marketsatkiv, settings.ini, market, satkiv
-iniread, marketsdefiv, settings.ini, market, sdefiv
-iniread, marketspdiv, settings.ini, market, spdiv
-iniread, marketshiny, settings.ini, market, shiny
-iniread, marketshowiv, settings.ini, market, showiv
+
+iniread, searchorder, settings.ini, market, order
+iniread, searchtype, settings.ini, market, type
+iniread, searchlevel, settings.ini, market, level
+iniread, searchprice, settings.ini, market, price
+iniread, searchhp, settings.ini, market, hpiv
+iniread, searchatk, settings.ini, market, atkiv
+iniread, searchdef, settings.ini, market, defiv
+iniread, searchsatk, settings.ini, market, satkiv
+iniread, searchsdef, settings.ini, market, sdefiv
+iniread, searchspd, settings.ini, market, spdiv
+iniread, searchshiny, settings.ini, market, shiny
+iniread, searchiv, settings.ini, market, showiv
 setworkingdir, %a_scriptdir%
 onexit, saveandexit
 settitlematchmode, 2
@@ -73,10 +76,12 @@ updateini:
     iniwrite, %prefix%, settings.ini, system, prefix
     iniwrite, %mininterval%, settings.ini, system, spam_msg_interval_min
     iniwrite, %maxinterval%, settings.ini, system, spam_msg_interval_max
+
     iniwrite, %hoptions%, settings.ini, system, options
     iniwrite, %hstatus%, settings.ini, system, status
     iniwrite, %hshop%, settings.ini, system, shop
     iniwrite, %hmarket%, settings.ini, system, market
+    
     iniwrite, %hcatch%, settings.ini, system, catch
     iniwrite, %hset%, settings.ini, system, set
     iniwrite, %hlatest%, settings.ini, system, latest
@@ -96,16 +101,16 @@ updateini:
     iniwrite, %vpokemon%, settings.ini, stats, pokemon
     iniwrite, %pokemoncaught%, settings.ini, stats, pokemon_caught
     iniwrite, %lastpokemoncaught%, settings.ini, stats, last_pokemon_caught
-    iniwrite, %marketorder%, settings.ini, market, order
-    iniwrite, %markettype%, settings.ini, market, type
-    iniwrite, %marketlevel%, settings.ini, market, level
-    iniwrite, %marketprice%, settings.ini, market, price
-    iniwrite, %markethpiv%, settings.ini, market, hpiv
-    iniwrite, %marketatkiv%, settings.ini, market, atkiv
-    iniwrite, %marketdefiv%, settings.ini, market, defiv
-    iniwrite, %marketsatkiv%, settings.ini, market, satkiv
-    iniwrite, %marketsdefiv%, settings.ini, market, sdefiv
-    iniwrite, %marketspdiv%, settings.ini, market, spdiv
-    iniwrite, %marketshiny%, settings.ini, market, shiny
-    iniwrite, %marketshowiv%, settings.ini, market, showiv
+    iniwrite, %msearchorder%, settings.ini, market, order
+    iniwrite, %searchtype%, settings.ini, market, type
+    iniwrite, %searchlevel%, settings.ini, market, level
+    iniwrite, %searchprice%, settings.ini, market, price
+    iniwrite, %searchhp%, settings.ini, market, hpiv
+    iniwrite, %searchatk%, settings.ini, market, atkiv
+    iniwrite, %searchdef%, settings.ini, market, defiv
+    iniwrite, %searchsatk%, settings.ini, market, satkiv
+    iniwrite, %searchsdef%, settings.ini, market, sdefiv
+    iniwrite, %searchspd%, settings.ini, market, spdiv
+    iniwrite, %searchshiny%, settings.ini, market, shiny
+    iniwrite, %searchiv%, settings.ini, market, showiv
     return
