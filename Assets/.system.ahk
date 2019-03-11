@@ -46,8 +46,8 @@ gosub, hotkeys
 
 return
 
-reload:
-    gosub, updateini
+guiclose:
+    gui, destroy
     reload
     return
 
@@ -58,6 +58,11 @@ msgcount:
 
 pkmncount:
     pokemoncaught += 1
+    return
+
+reload:
+    gosub, updateini
+    reload
     return
 
 saveandexit:
