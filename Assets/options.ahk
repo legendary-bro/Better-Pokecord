@@ -91,9 +91,8 @@ hotkeysupdate:
     return
 
 hotkeysreset:
-    hoptions:="^Down"
     hshop:="^Left"
-    hmarket:="^Right"
+    hpokedex:="^Right"
     hcatch:="+Enter"
     hset:="+\"
     hlatest:="Numlock"
