@@ -92,6 +92,80 @@ send(prefix,message,keydelay:=40) {
     return
 }
 
+shopbuy(index,shopbuy) {
+    stringlower, shoplower, shopbuy
+    selected := strsplit(shoplower," "," ")
+    if (index = 1)
+        return "buy nature " selected[1]
+    if (index = 2)
+        if (selected[1] = "friendship")
+            return "buy " selected[1]
+        else
+            return "buy stone " selected[1]
+    if (index = 3 || index = 4)
+        return "buy " shoplower
+    if (shopbuy > 0 and shopbuy < 5)
+        return "buy " shopbuy
+    if (shopbuy = 5)
+        return "buy mega"
+    if (shopbuy > 5)
+        out := "buy mega "
+    if (shopbuy = 6)
+        return out .= "x"
+    else
+        return out .= "y"
+}
+
+shopindex() {
+    wingettitle, window
+    index := strsplit(window," ")
+    if (index[3] = "Natures")
+        return 1
+    if (index[3] = "Evolution")
+        return 2
+    if (index[3] = "Held")
+        return 3
+    if (index[3] = "Forms")
+        return 4
+    if (index[3] = "Boosters")
+        return 5
+    return
+}
+
+shopopen(title,price) {
+    gui, destroy
+    gui, margin, 0, 0
+    gui, color, FFFFFF
+    gui, add, picture, w480 h-1, Assets\GUI\backgrounds\shop.png
+    if (title = "Welcome")
+        gui, add, picture, x12 y12 w136 h56, Assets\GUI\backgrounds\shopwelcome.png
+    gui, font, s11 w700 q5, consolas
+    gui, add, text, x195 y24 w53 h25 center backgroundtrans gshopnature, Nature
+    gui, add, text, x248 y24 w53 h25 center backgroundtrans gshopevo, Evo
+    gui, add, text, x301 y24 w53 h25 center backgroundtrans gshopitems, Items
+    gui, add, text, x354 y24 w53 h25 center backgroundtrans gshopforms, Forms
+    gui, add, text, x407 y24 w53 h25 center backgroundtrans gshopboost, Boost
+    if (title != "Welcome") {
+        gui, font, s35
+        gui, add, text, x12 y12 w136 h56 center gshopbuy, BUY
+        gui, font, s12
+        if (title != "Boosters")
+            gui, add, text, x115 y40 w35 h18 center, % price "c"
+        if (title = "Natures")
+            gui, add, listbox, x180 y46 w280 r8 border vshopbuy, Adamant (+a -sa)|Bashful (+sa -sa)|Bold    (+d -a)|Brave   (+a -s)|Calm    (+sd -a)|Careful (+sd -sa)|Docile  (+d -d)|Gentile (+sd -d)|Hardy   (+a -a)|Hasty   (+s -d)|Impish  (+d -sa)|Jolly   (+s -sa)|Lax     (+d -sd)|Lonely  (+a -d)|Mild    (+sa -d)|Modest  (+sa -a)|Naive   (+s -sd)|Naughty (+a -sd)|Quiet   (+sa -s)|Quirky  (+sd -sd)|Rash    (+sa -sd)|Relaxed (+d -s)|Sassy   (+sd -s)|Serious (+s -s)|Timid   (+s -a)
+        if (title = "Evolution")
+            gui, add, listbox, x180 y46 w280 r8 border vshopbuy, Friendship Bracelet|Dawn Stone|Dusk Stone|Fire Stone|Ice Stone|Leaf Stone|Moon Stone|Shiny Stone|Sun Stone|Thunder Stone|Water Stone
+        if (title = "Held Items")
+            gui, add, listbox, x180 y46 w280 r8 border vshopbuy, Everstone|XP Blocker|Deep Sea Scale|Deep Sea Tooth|Dragon Scale|Dubious Disc|Electrizer|Kings Rock|Magmarizer|Metal Coat|Prism Scale|Protector|Reaper Cloth|Sachet|Up-Grade|Whipped Dream|Oval Stone|Razor Claw|Razor Fang
+        if (title = "Forms")
+            gui, add, listbox, x180 y46 w280 r8 border vshopbuy, Deoxys Normal Form|Deoxys Attack Form|Deoxys Defense Form|Deoxys Speed Form
+        if (title = "Boosters")
+            gui, add, listbox, x180 y46 w280 r8 border altsubmit vshopbuy, 2x XP Boost      (30m 20c)|2x XP Boost      (1h 40c)|2x XP Boost      (2h 70c)|1.5x XP Boost    (4h 90c)|Mega Evolution   (1,000c)|Mega Evolution X (1,000c)|Mega Evolution Y (1,000c)
+    }
+    gui, show, w480 h224, % "Shop - " title
+    return
+}
+
 showgui(w,h,title,speeed:=0) {
     gui, show, center y0 w%w% h%h%, %title%
     wingetactivestats, title, gw, gh, gx, gy
