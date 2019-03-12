@@ -26,23 +26,15 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 
 [1.4 Catching or changing selected pokemon](#14-catching-or-changing-selected-pokemon)
 
-[1.5 Menu Controls](#15-menu-controls)
+### [**2.0 Menu Controls**](#20-menu-controls)
 
-### [**2.0 Options Menu**](#20-options-menu-1)
+[2.1 Main menu](#21-main-menu)
 
-[2.1 Exit and reload](#21-exit-and-reload)
+[2.2 Pokedex menu](#22-pokedex-menu)
 
-[2.2 Set prefix](#22-set-prefix)
+[2.3 Shop menu](#23-shop-menu)
 
-[2.3 Set spam cooldown](#23-set-spam-cooldown)
-
-[2.4 Set new hotkeys](#24-set-new-hotkeys)
-
-[2.5 Spam menu](#25-spam-menu)
-
-[2.6 Bal and daily](#26-bal-and-daily)
-
-### [**3.0 Status Menu**](#30-status-menu)
+### [**3.0 Hotkey Controls**](#30-hotkey-controls)
 
 [3.1 Show all owned](#031-show-all-owned)
 
@@ -50,27 +42,17 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 
 [3.3 Search by low price](#33-search-by-low-price)
 
-[3.4 Stats](#34-stats)
+[3.4 Info latest](#34-info-latest)
 
-[3.5 Info latest](#35-info-latest)
+[3.5 Quick sell](#35-quick-sell)
 
-[3.6 Quick sell](#36-quick-sell)
+[3.6 Quick buy](#36-quick-buy)
 
-[3.7 Quick buy](#37-quick-buy)
+[3.7 Quick Trade](#37-quick-trade)
 
-[3.8 Quick Trade](#38-quick-trade)
+[3.8 Nickname](#38-nickname)
 
 [3.9 Info](#39-info)
-
-### [**4.0 Shop Menu**](#40-shop-menu-1)
-
-[4.1 General controls](#41-general-controls)
-
-### [**5.0 Search Menu**](#50-search-menu-1)
-
-[5.1 Reset buttons](#51-reset-buttons)
-
-[5.2 IV filtering](#52-iv-filtering)
 
 ### 0.1 Features
 
@@ -80,9 +62,11 @@ __*This isn't a self bot and its not going to auto catch stuff for you.*__ You h
 * Assisted catch and inventory macro's
 * Script to spam messages to level and spawn pokemon
 
-![search menu](https://i.imgur.com/bCuS1me.png) ![status menu](https://i.imgur.com/rDmC6Ys.png)
+![pokedex menu](https://i.imgur.com/dhDdCB6.png)
 
-![Shop menu](https://i.imgur.com/GkKN7GK.png) ![options menu](https://i.imgur.com/yfdHVKK.png)
+![shop menu 1](https://i.imgur.com/X4quu1m.png)  ![shop menu 2](https://i.imgur.com/hNLVzgK.png)
+
+![main menu](https://i.imgur.com/ML7sDux.png)
 
 ### 0.2 Requirements
 
@@ -96,8 +80,6 @@ You *may* need to run as admin. Im only aware of two situations where this had t
 
 Head over to the [releases page](https://github.com/eddhuh/Better-Pokecord/releases) and download the latest release.
 
-You can clone/download directly from the master branch if you'd like. But you will not get an .exe file should you need one, and I will not be providing support for any features committed to the master branch that are not yet in a release.
-
 ### 0.4 Use this script at your own risk
 
 Pokecord is fairly clear about its stance on the usage of macro tools on its start message when you begin to play. I’ve been using scripts on Pokecord for some time and while I dont think there is high risk while using this & while I also have not had any issues on a private server, your decisions with this are your own responsibility.
@@ -108,7 +90,7 @@ You can fairly easily contact me here on GitHub, but if youd like to keep up on 
 
 ## 1.0 General Controls
 
-You can use most of the tools Better Pokecord comes with through the visual menus, or assign some of them to hotkeys for faster access. I will provide the default hotkeys of anything that can be given a hotkey, but they can all be changed to user prefference in a later menu. There are a few that cant be changed or are only availabe as hotkeys though which I would like to cover before jumping into menu controls.
+Better Pokecord uses a combination of visual menus and hotkeys in order for it to do the things you want it to do. I will provide the default hotkeys of anything that can be given a hotkey, but they can all be changed to user prefference in a later menu. There are a few that cant be changed or are only availabe as hotkeys though which I would like to cover before jumping into menu controls.
 
 All of the hotkeys (with the exception of the hotkeys explained in sections 1.1-1.3) **will not work unless Discord is the active window**. This allows you to use the keys for other tasks outside of Discord, without the fear of having the script take off running on you for accidentally pressing one of the hotkeys. Shiny pokemon are also not currently supported in tools that make use of highlighted text.
 
@@ -163,97 +145,87 @@ or
 
 *waiting* mew{Backslash}
 
-### 1.5 Menu controls
+## 2.0 Menu Controls
 
-There are 4 main menus within Better Pokecord. All are accessed using hotkeys that can be customized later on.
+### 2.1 Main menu
 
-Ctrl+Down: Options Menu
+#### Default hotkey: Ctrl+z
 
-Ctrl+Up: Status Menu
+![main menu](https://i.imgur.com/ML7sDux.png)
 
-Ctrl+Left: Shop Menu
+The main menu is where you can edit the options & hotkeys the script will use. You can also open either of the other two menus or start using a spam macro. Sections 2.1.x will cover the options & hotkeys menus and the spam macros.
 
-Ctrl+Right: Search Menu
+#### 2.1.1 Options
 
-## 2.0 Options Menu
-
-![options menu](https://i.imgur.com/yfdHVKK.png)
-
-The options menu allows you to change things like the prefix, spam cooldowns, and edit hotkey assignments. You can also quickly check your bal or get the daily.
-
-### 2.1 Exit and reload
-
-These buttons do exactly what you expect them to.
-
-### 2.2 Set prefix
+##### Set prefix
 
 You can change the prefix from its default (p!) to anything you want. By default it should look exactly like the image above this text.
 
 Please note that the curly brackets seen in the text box will not be sent in messages. The script will place curly brackets around some special characters (! # ^ +) if you use one while changing the prefix.
 
-### 2.3 Set spam cooldown
+##### Menu transparency
 
-There are two values within the Settings.ini file that control how long the script should wait in milliseconds before sending another message when its been instructed to begin spamming. The default values are 500 and 1000.
+You can make the menus more or less transparent by giving this a value between 0-255
 
-This means that after sending a spam message the script will wait at least half a second but no longer than one second before sending another message. The script will randomly pick a time between the Min/Max. So setting them to 3000,10500 for example would make it wait at least 3 seconds but no longer than 10.5 seconds to send the next message.
+###### setting the windows to 0 transparency will make them not only completely invisible, but also unresponsive even if you are somehow clicking in the right spot
 
-### 2.4 Set new hotkeys
+##### Set spam cooldown
 
-![hotkeys menu](https://i.imgur.com/weHKPpA.png)
+There are two values that control how long the script should wait in milliseconds before sending another message when its been instructed to begin spamming. The default values are 500 and 1000.
+
+This means that after sending a spam message the script will wait at least half a second but no longer than one second before sending another message. The script will randomly pick a time between the Min/Max. So setting them to 3000/10500 for example would make it wait at least 3 seconds but no longer than 10.5 seconds to send the next message.
+
+#### 2.1.2 Hotkeys
 
 The hotkeys menu will allow you to change key bindings from their defaults as described in this document to a new combination.
 
-### 2.5 Spam menu
+#### 2.1.3 Spam
 
-![spam menu](https://i.imgur.com/Eydi5x1.png)
+This menu will allow you to launch spam macros.
 
-This menu will allow you to launch spam tools should you not want to use the available hotkeys.
-
-Messages are sent at random intervals based on the settings in the options menu, which is measured in milliseconds. By default it is set to “500,1000”. This means it will wait at least half a second but no longer than 1 second before sending another message.  Spam macros will continue to send messages until a pause key is pressed, or it reaches the number of messages it was assigned in the input prompt.
+Messages are sent at random intervals based on the settings in the options menu, which is measured in milliseconds. Spam macros will continue to send messages until a pause key is pressed, or it reaches the number of messages it was assigned in the input prompt.
 
 Be aware of what your pause key is set to.
 
 I stress that you should first test, and then use this in a private server.
 
-### 2.5.1 Pausing or canceling spam
+##### Pausing or canceling spam
 
-#### Default hotkey: [
+##### Default hotkey: [
 
 Will pause or unpause the spam messages after they have begun. To cancel the spam completely you will need to reload, or exit the script.
 
-### 2.5.2 Counting spam
-
-#### Default hotkey: Alt+[
+##### Counting spam
 
 You will be presented with an input prompt asking you how many messages you would like to send. The value you enter should not contain any commas. Upon clicking “Ok” or pressing the Enter key the script will start sending messages in a numerical order.
 
 ![messagespam1](https://i.imgur.com/1a9JxX6.png) - In this case I've entered the number 13 into the prompt.
 
-### 2.5.3 Generator spam
+##### Timed spam
 
-#### Default hotkey: Ctrl+[
+Functions the exact same way as the counting spammer, except it will spam for the amount of minutes its given in its input prompt. This macro measures *user idle time*, if you set it to spam for 5:00 mins and your cat bumps the mouse at 4:59 it will start over from 0:00.
 
-Functions the exact same way as the counting spammer, except instead of numbers it will generate a random pokemon.
+##### Scrambled spam
 
-![messagespam2](https://i.imgur.com/nKdyyQq.png) - In this case I've entered the number 3 into the prompt.
-
-### 2.5.4 Scrambled spam
-
-#### Default hotkey: Alt+]
-
-will create a random 5-12 long string of characters and send it.
+Same thing, but will create a random 5-12 long string of characters and send it.
 
 ![messagespam3](https://i.imgur.com/tigInNx.png)
 
-### 2.6 Bal and daily
+### 2.2 Pokedex menu
 
-Does exactly what you think it does.
+![pokedex menu](https://i.imgur.com/dhDdCB6.png)
 
-## 3.0 Status Menu
+Will search the market or your own inventory based on user selections. You can include "<" or ">" in the IV searches as well.
 
-![status menu](https://i.imgur.com/rDmC6Ys.png)
+The pokedex will save your last selections for use in future searches, you can press the reset button to set everything back to a neutral state.
 
-The status menu shows any immediate actions that can be taken, along with some stats based on usage.
+### 2.3 Shop menu
+
+![shop menu 2](https://i.imgur.com/hNLVzgK.png)
+
+I think this menu is fairly self explainitory, click the item you want and hit buy.
+
+## 3.0 Hotkey controls
 
 ### 3.1 Show all owned
 
@@ -279,11 +251,7 @@ Will do a market search for the selected pokemon and prioritize lowest price.
 
 (market search --name [selected pokemon] --order price ascending --showiv)
 
-### 3.4 Stats
-
-The script will keep track of and display stats for how many times it has been started, the amount of messages for its current duration, the total amount of messages it has sent across all durations, the amount of times the catch macro didnt time out, and what the last caught pokemon using the catch macro was.
-
-### 3.5 Info latest
+### 3.4 Info latest
 
 #### Default hotkey: NumLock
 
@@ -293,7 +261,7 @@ Will check the most recent catch.
 
 **Unless you caught your current last pokemon with the catch macro, the information displayed in the status menu is inaccurate.**
 
-### 3.6 Quick sell
+### 3.5 Quick sell
 
 #### Default hotkey: NumPadSubtract
 
@@ -315,7 +283,7 @@ I enter 1 in the prompt and click “ok” or press the enter button. The script
 
 If you are going to list something for a value that contains commas the value you enter into the prompt should not contain those commas. (1000 not 1,000)
 
-### 3.7 Quick buy
+### 3.6 Quick buy
 
 #### Default hotkey: NumPadAdd
 
@@ -325,42 +293,20 @@ Functions in an almost identical manner as what is mentioned above, but instead 
 
 ![marketbuy2](https://i.imgur.com/D21THXU.png)
 
-### 3.8 Quick Trade
+### 3.7 Quick Trade
 
 #### Default hotkey: Ctrl+NumPadSubtract
 
 Used in the same way as the sell and buy commands but this will add multiple pokemon from your inventory to a trade window. **You will need to manually copy what you highlighted to the clipboard using Ctrl+c before using this**. For safety, it will not send the confirm command after it adds to the trade window. You will need to confirm the trade yourself.
+
+### 3.8 Nickname
+
+#### Default hotkey: Ctrl+NumPadDot
+
+Will nickname any highlighted pokemon the name its given in a prompt.
 
 ### 3.9 Info
 
 #### Default hotkey: Ctrl+NumPadAdd
 
 Use this on highlighted pokemon in your inventory or on market to see all of their stat info pages.
-
-## 4.0 Shop Menu
-
-![Shop menu](https://i.imgur.com/GkKN7GK.png)
-
-Allows you to buy items from Pokecords store.
-
-### 4.1 General controls
-
-I dont think anything about this menu needs to be explained in detail. You click buy and it spends the amount on the button and buys your item.
-
-## 5.0 Search Menu
-
-![search menu](https://i.imgur.com/bCuS1me.png)
-
-Setting anything to "--" will tell the script not to include it in the search.
-
-### 5.1 Reset buttons
-
-Your last selections are saved each time you run a search, the two reset buttons will reset everything back to a "--" or default state in their respective sections.
-
-### 5.2 IV filtering
-
-![Market search](https://i.imgur.com/39EG7fA.png)
-
-When filtering by IV's you can include > or < in the value.
-
-![Market Results](https://i.imgur.com/uE5qnzi.png)
