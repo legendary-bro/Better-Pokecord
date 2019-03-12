@@ -149,7 +149,7 @@ or
 
 ### 2.1 Main menu
 
-#### Default hotkey: Ctrl+z
+#### Default hotkey: Alt+z
 
 ![main menu](https://i.imgur.com/ML7sDux.png)
 
