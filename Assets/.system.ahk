@@ -1,6 +1,7 @@
 iniread, prefix, settings.ini, system, prefix
 iniread, mininterval, settings.ini, system, spam_msg_interval_min
 iniread, maxinterval, settings.ini, system, spam_msg_interval_max
+iniread, menutrans, settings.ini, system, transparency
 iniread, hshop, settings.ini, system, shop
 iniread, hpokedex, settings.ini, system, pokedex
 iniread, hcatch, settings.ini, system, catch
@@ -69,6 +70,7 @@ updateini:
     iniwrite, %prefix%, settings.ini, system, prefix
     iniwrite, %mininterval%, settings.ini, system, spam_msg_interval_min
     iniwrite, %maxinterval%, settings.ini, system, spam_msg_interval_max
+    iniwrite, %menutrans%, settings.ini, system, transparency
     iniwrite, %hshop%, settings.ini, system, shop
     iniwrite, %hpokedex%, settings.ini, system, pokedex
     iniwrite, %hcatch%, settings.ini, system, catch

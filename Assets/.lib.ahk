@@ -132,7 +132,7 @@ shopindex() {
     return
 }
 
-shopopen(title,price) {
+shopopen(title,price,trans:=255) {
     gui, destroy
     gui, margin, 0, 0
     gui, color, FFFFFF
@@ -163,6 +163,7 @@ shopopen(title,price) {
             gui, add, listbox, x180 y46 w280 r8 border altsubmit vshopbuy, 2x XP Boost      (30m 20c)|2x XP Boost      (1h 40c)|2x XP Boost      (2h 70c)|1.5x XP Boost    (4h 90c)|Mega Evolution   (1,000c)|Mega Evolution X (1,000c)|Mega Evolution Y (1,000c)
     }
     gui, show, w480 h224, % "Shop - " title
+    winset, transparent, % trans, % "Shop - "
     return
 }
 

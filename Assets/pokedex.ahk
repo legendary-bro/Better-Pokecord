@@ -47,7 +47,7 @@ pokedex:
     gui, add, text, x20 y516 w260 h11 center backgroundtrans, BetterPokecord v2.4b
     gui, add, picture, x7 y7 w-1 h180 backgroundtrans, % "Assets\GUI\pkmn\" settingsbg[random(1,settingsbg.maxindex())]
     gui, show, autosize, Pokedex - BetterPokecord
-    winset, transparent, 255, BetterPokecord
+    winset, transparent, % menutrans, Pokedex
     return
 
 searchmarket:
