@@ -37,6 +37,7 @@ setworkingdir, %a_scriptdir%
 onexit, saveandexit
 settitlematchmode, 2
 setkeydelay, 40
+version := "v" 2.4 "b"
 bootcount += 1
 messagessent := 0
 menu, spam, add, Counting, spamnum

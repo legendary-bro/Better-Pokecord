@@ -44,7 +44,7 @@ pokedex:
     gui, add, text, x149 y400 w142 h20 center backgroundtrans, % commify(bootcount)
     gui, font, s8
     gui, add, text, x42 y432 w75 h15 center backgroundtrans gsearchreset, reset search
-    gui, add, text, x20 y516 w260 h11 center backgroundtrans, BetterPokecord v2.4b
+    gui, add, text, x20 y516 w260 h11 center backgroundtrans, % "BetterPokecord " version
     gui, add, picture, x7 y7 w-1 h180 backgroundtrans, % "Assets\GUI\pkmn\" settingsbg[random(1,settingsbg.maxindex())]
     gui, show, autosize, Pokedex - BetterPokecord
     winset, transparent, % menutrans, Pokedex
