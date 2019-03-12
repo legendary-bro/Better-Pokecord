@@ -2,6 +2,7 @@ iniread, prefix, settings.ini, system, prefix
 iniread, mininterval, settings.ini, system, spam_msg_interval_min
 iniread, maxinterval, settings.ini, system, spam_msg_interval_max
 iniread, menutrans, settings.ini, system, transparency
+iniread, hqmenu, settings.ini, system, qmenu
 iniread, hshop, settings.ini, system, shop
 iniread, hpokedex, settings.ini, system, pokedex
 iniread, hcatch, settings.ini, system, catch
@@ -13,6 +14,7 @@ iniread, hsearchprice, settings.ini, system, searchprice
 iniread, hquicksell, settings.ini, system, quicksell
 iniread, htrade, settings.ini, system, trade
 iniread, hquickbuy, settings.ini, system, quickbuy
+iniread, hnickname, settings.ini, system, nickname
 iniread, hinfo, settings.ini, system, info
 iniread, hnumerical, settings.ini, system, numerical
 iniread, htime, settings.ini, system, time
@@ -40,6 +42,16 @@ settitlematchmode, 2
 setkeydelay, 40
 bootcount += 1
 messagessent := 0
+menu, spam, add, Counting, spamnum
+menu, spam, add, Timed, spamtime
+menu, spam, add, Scrambled, spamscrambled
+menu, system, add, Pokedex, pokedex
+menu, system, add, Shop, shopmenu
+menu, system, add
+menu, system, add, Options, optionsmenu
+menu, system, add, Hotkeys, hotkeysmenu
+menu, system, add
+menu, system, add, Spam, :spam
 gosub, hotkeys
 
 return
@@ -71,6 +83,7 @@ updateini:
     iniwrite, %mininterval%, settings.ini, system, spam_msg_interval_min
     iniwrite, %maxinterval%, settings.ini, system, spam_msg_interval_max
     iniwrite, %menutrans%, settings.ini, system, transparency
+    iniwrite, %hqmenu%, settings.ini, system, qmenu
     iniwrite, %hshop%, settings.ini, system, shop
     iniwrite, %hpokedex%, settings.ini, system, pokedex
     iniwrite, %hcatch%, settings.ini, system, catch
@@ -82,6 +95,7 @@ updateini:
     iniwrite, %hquicksell%, settings.ini, system, quicksell
     iniwrite, %htrade%, settings.ini, system, trade
     iniwrite, %hquickbuy%, settings.ini, system, quickbuy
+    iniwrite, %hnickname%, settings.ini, system, nickname
     iniwrite, %hinfo%, settings.ini, system, info
     iniwrite, %hnumerical%, settings.ini, system, numerical
     iniwrite, %htime%, settings.ini, system, time

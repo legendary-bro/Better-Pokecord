@@ -96,6 +96,7 @@ end::suspend
 
 hotkeys:
     hotkey, ifwinactive, Discord
+    hotkey, %hqmenu%, quickmenu
     hotkey, %hshop%, shopmenu
     hotkey, %hpokedex%, pokedex
     hotkey, %hcatch%, catchpokemon
@@ -107,6 +108,7 @@ hotkeys:
     hotkey, %hquicksell%, marketsell
     hotkey, %htrade%, trade
     hotkey, %hquickbuy%, marketbuy
+    hotkey, %hnickname%, nicknames
     hotkey, %hinfo%, marketinfo
     hotkey, %hnumerical%, spamnum
     hotkey, %htime%, spamtime
