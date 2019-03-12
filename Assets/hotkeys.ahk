@@ -110,8 +110,5 @@ hotkeys:
     hotkey, %hquickbuy%, marketbuy
     hotkey, %hnickname%, nicknames
     hotkey, %hinfo%, marketinfo
-    hotkey, %hnumerical%, spamnum
-    hotkey, %htime%, spamtime
-    hotkey, %hscrambled%, spamscrambled
     hotkey, %hpause%, pause
     return
