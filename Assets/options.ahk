@@ -83,7 +83,7 @@ save:
 hotkeysupdate:
     gui, submit
     gosub, hotkeys
-    gosub, hotkeysmenu
+    gui, destroy
     return
 
 hotkeysreset:
