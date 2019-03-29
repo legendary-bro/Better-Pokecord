@@ -38,7 +38,7 @@ setworkingdir, %a_scriptdir%
 onexit, saveandexit
 settitlematchmode, 2
 setkeydelay, 40
-version := "v" 2.5 "b"
+version := "v" 2.5
 bootcount += 1
 messagessent := 0
 loop, Lists\*.txt, f
