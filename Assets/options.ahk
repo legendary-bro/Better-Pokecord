@@ -104,6 +104,7 @@ hotkeysreset:
     hnumerical:="!["
     htime:="^["
     hpause:="["
+    hcyclelist:="!Space"
     gosub, hotkeys
     gosub, hotkeysmenu
     return

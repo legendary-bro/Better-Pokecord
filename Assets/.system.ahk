@@ -17,6 +17,7 @@ iniread, hquickbuy, settings.ini, system, quickbuy
 iniread, hnickname, settings.ini, system, nickname
 iniread, hinfo, settings.ini, system, info
 iniread, hpause, settings.ini, system, pause
+iniread, hcyclelist, settings.ini, system, cyclelist
 iniread, bootcount, settings.ini, stats, boot_count
 iniread, totalmessagessent, settings.ini, stats, total_messages_sent
 iniread, vpokemon, settings.ini, stats, pokemon
@@ -96,6 +97,7 @@ updateini:
     iniwrite, %hnickname%, settings.ini, system, nickname
     iniwrite, %hinfo%, settings.ini, system, info
     iniwrite, %hpause%, settings.ini, system, pause
+    iniwrite, %hcyclelist%, settings.ini, system, cyclelist
     iniwrite, %bootcount%, settings.ini, stats, boot_count
     iniwrite, %totalmessagessent%, settings.ini, stats, total_messages_sent
     iniwrite, %vpokemon%, settings.ini, stats, pokemon

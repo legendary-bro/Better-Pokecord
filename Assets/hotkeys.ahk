@@ -111,4 +111,5 @@ hotkeys:
     hotkey, %hnickname%, nicknames
     hotkey, %hinfo%, marketinfo
     hotkey, %hpause%, pause
+    hotkey, %hcyclelist%, cyclelist
     return
