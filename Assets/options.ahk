@@ -26,6 +26,7 @@ hotkeysmenu:
     gui, add, text, x375 y50 w120 h25 center, Catch
     gui, add, text, x375 y100 w120 h25 center, Set
     gui, add, text, x375 y150 w120 h25 center, Pause Spam
+    gui, add, text, x375 y200 w120 h25 center, Cycle List
     gui, font, s12
     gui, add, hotkey, x0 y75 w120 h25 vhqmenu, % hqmenu
     gui, add, hotkey, x0 y125 w120 h25 vhpokedex, % hpokedex
@@ -42,6 +43,7 @@ hotkeysmenu:
     gui, add, hotkey, x375 y75 w120 h25 vhcatch, % hcatch
     gui, add, hotkey, x375 y125 w120 h25 vhset, % hset
     gui, add, hotkey, x375 y175 w120 h25 vhpause, % hpause
+    gui, add, hotkey, x375 y225 w120 h25 vhcyclelist, % hcyclelist
     gui, add, text, x0 y0 w120 h300 backgroundtrans border
     gui, add, text, x125 y0 w120 h300 backgroundtrans border
     gui, add, text, x250 y0 w120 h300 backgroundtrans border
