@@ -41,6 +41,8 @@ setkeydelay, 40
 version := "v" 2.4 "b"
 bootcount += 1
 messagessent := 0
+loop, Lists\*.txt, f
+    menu, lists, add, % substr(a_Loopfilename,1,-4), readlist
 menu, spam, add, Counting, spamnum
 menu, spam, add, Timed, spamtime
 menu, spam, add, Scrambled, spamscrambled
@@ -50,10 +52,31 @@ menu, system, add
 menu, system, add, Options, optionsmenu
 menu, system, add, Hotkeys, hotkeysmenu
 menu, system, add
+menu, system, add, Lists, :lists
+menu, system, add
 menu, system, add, Spam, :spam
 gosub, hotkeys
 
 return
+
+readlist:
+    if (lastmenuitem != "")
+        menu, lists, uncheck, % lastmenuitem
+    menu, lists, check, % a_thismenuitem
+    currentlist := []
+    loop, read, % "Lists\" a_thismenuitem ".txt"
+        if (a_loopreadline contains text)
+            currentlist.push(a_loopreadline)
+    listcounter := 0
+    lastmenuitem := a_thismenuitem
+    return
+
+cyclelist:
+    listcounter += 1
+    if (listcounter > currentlist.maxindex())
+        listcounter := 1
+    send(prefix,currentlist[listcounter])
+    return
 
 guiclose:
     gui, destroy
