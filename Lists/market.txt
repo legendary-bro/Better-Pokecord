@@ -1,0 +1,2 @@
+market search --name pikachu
+market search --name eevee
