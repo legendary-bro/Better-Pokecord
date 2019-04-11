@@ -1,3 +1,5 @@
+###### I've completely lost interest in Pokecord and have abandoned this. The readme is for the most part complete but I probably missed one or two key details after the latest update. Thank you for your support.
+
 # Better Pokecord
 
 An ahk script designed to cut down on the amount of typing Pokecord requires. Features include visual menus for options, status, shop and market. Macros to help you catch, sell, trade and buy Pokemon. And macros to spam messages to level or spawn Pokemon.
